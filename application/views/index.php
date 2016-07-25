@@ -10,17 +10,17 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<!-- Important stuff for SEO, don't neglect. (And don't dupicate values across your site!) -->
-	<?php $seo=$seo_homepage->row(); $label=$label_homepage->row(); $services=$services_homepage->row(); ?>
+	<?php $seo=(array)$seo_homepage->row(); $label=(array)$label_homepage->row(); $services=(array)$services_homepage->row(); $contact=(array)$contact_homepage->row(); $whychoose=(array)$whychoose_homepage(->row();  ?>
 	<meta name="author" content="Aptikma Studio" />
-	<meta name="description" content="<?php echo $seo->meta_desc_id; ?>" />
-	<meta name="keyword" content="<?php echo $seo->meta_keyword_id; ?>"/>
-	<meta name="tag" content="<?php echo $seo->meta_tag_id; ?>"/>
+	<meta name="description" content="<?php echo $seo['meta_desc_'.WEB_LANG]; ?>" />
+	<meta name="keyword" content="<?php echo $seo['meta_keyword_'.WEB_LANG]; ?>"/>
+	<meta name="tag" content="<?php echo $seo['meta_tag_'.WEB_LANG]; ?>"/>
 	
 	<!-- Don't forget to set your site up: http://google.com/webmasters -->
 	<meta name="google-site-verification" content="" />
 	<meta name="Copyright" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php echo $label->label_id; ?></title>
+	<title><?php echo $label['label_'.WEB_LANG]; ?></title>
 	<!-- Use Iconifyer to generate all the favicons and touch icons you need: http://iconifier.net -->
 	<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/favicon/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" href="<?php echo base_url(); ?>assets/images/favicon/apple-touch-icon.png" />
@@ -65,18 +65,18 @@
 			
 				<div class="top_details clearfix f_left">
 					<div class="languages-select languages-drop">
-						<span><i class="ico-globe4"></i><span>English</span></span>
+						<span><i class="ico-globe4"></i><span>Indonesia</span></span>
 						<div class="languages-panel">
 							<ul class="languages-panel-con">
-								<li class="active"><a href="#">English <i class="ico-check lang_checked"></i></a></li>
-								<li><a href="#">RTL</a></li>
+								<li class="active"><a href="#">Indonesia <i class="ico-check lang_checked"></i></a></li>
+								<li><a href="#">English</a></li>
 							</ul>
 						</div>
 					</div>
-					<span class="top_login">
+					<!--<span class="top_login">
 						<i class="icon ico-key3"></i><a class="popup-with-move-anim" href="#login-popup">Login</a>
-					</span>
-					<div class="zoom-anim-dialog small-dialog mfp-hide login_popup" id="login-popup">
+					</span>-->
+					<!--<div class="zoom-anim-dialog small-dialog mfp-hide login_popup" id="login-popup">
 						<form class="login_form_colored">
 							<div class="lfc_user_row">
 								<span class="lfc_header">Login to your Account</span>
@@ -112,9 +112,9 @@
 							</div>
 							<a class="lfc_forget_pass" href="#">Forgot Your Password?</a>
 						</form>
-					</div>
-					<span><i class="icon ico-phone5"></i><span class="title">Call Us :</span> (123) 456 - 7890</span>
-					<span><i class="icon ico-comment2"></i><span class="title">Support :</span> (123) 456 - 7890</span>
+					</div>-->
+					<!--<span><i class="icon ico-phone5"></i><span class="title">Call Us :</span> (123) 456 - 7890</span>
+					<span><i class="icon ico-comment2"></i><span class="title">Support :</span> (123) 456 - 7890</span>-->
 				</div>
 			        
 				<div class="top-socials box_socials f_right">
@@ -181,614 +181,19 @@
 						</span>		
 						<ul id="navy" class="clearfix">
 							<li class="normal_menu mobile_menu_toggle current_page_item">
-								<a href="index.php"><span>Home</span></a>
-								<!--ul>
-									<li class="normal_menu"><a href="index.html">Home Page V1</a></li>
-									<li class="normal_menu"><a href="index2.html">Home Page V2</a></li>
-									<li class="normal_menu"><a href="index3.html">Home Page V3</a></li>
-									<li class="normal_menu"><a href="index4.html">Home Page V4</a></li>
-									<li class="normal_menu"><a href="index5.html">Home Page V5</a></li>
-									<li class="normal_menu"><a href="index-one-page1.html">Home One Page </a>
-										<ul>
-											<li class="normal_menu"><a href="index-one-page1.html">Home One Page V1</a></li>
-											<li class="normal_menu"><a href="index-one-page2.html">Home One Page V2</a></li>
-										</ul>
-									</li>
-									<li class="normal_menu"><a href="index-blog-timeline.html">Home Blog </a>
-										<ul>
-											<li class="normal_menu"><a href="index-blog-timeline.html">Home Blog Timeline</a></li>
-											<li class="normal_menu"><a href="index-blog-masonry.html">Home Blog Masonry</a></li>
-											<li class="normal_menu"><a href="index-blog-list.html">Home Blog List</a></li>
-											<li class="normal_menu"><a href="index-blog-standard.html">Home Blog Standard</a></li>
-										</ul>
-									</li>
-									
-									<li class="normal_menu"><a href="index-header-side.html">Home With Side Menu</a>
-										<ul>
-											<li class="normal_menu"><a href="index-header-side-boxed.html">Home Boxed With Side Menu</a></li>
-											<li class="normal_menu"><a href="index-header-side.html">Home Full With Side Menu</a></li>
-										</ul>
-									</li>
-									
-									<li class="normal_menu"><a href="index-header-transparent-dark.html">Home Transparent Header</a>
-										<ul>
-											<li class="normal_menu"><a href="index-header-transparent-dark.html">Home Transparent Dark</a></li>
-											<li class="normal_menu"><a href="index-header-transparent-light.html">Home Transparent Light</a></li>
-										</ul>
-									</li>
-									<li class="normal_menu"><a href="index-menu-button-mode.html">Home Menu Button Mode</a></li>
-								</ul-->
+								<a href="<?php echo base_url(); ?>aptikma/index"><span>Home</span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="#"><span>Tentang Kami</span></a>
-								<!--ul>
-									<li class="normal_menu"><a href="page-about-us.html">About Us</a></li>
-									<li class="normal_menu"><a href="page-about-me.html">About Me</a></li>
-									<li class="normal_menu"><a href="page-team-members.html">Team Members</a></li>
-									<li class="normal_menu"><a href="page-services.html">Services</a></li>
-									<li class="normal_menu"><a href="#">Portfolio</a>
-										<ul>
-											<li class="normal_menu"><a href="#">Portfolio Filter</a>
-												<ul>
-													<li class="normal_menu"><a href="#">Filter Style 1</a>
-														<ul>
-															<li class="normal_menu"><a href="portfolio-style1-3column-boxed.html">Three Columns Boxed</a></li>
-															<li class="normal_menu"><a href="portfolio-style1-3column-boxed-nospaces.html">Three Columns Boxed2</a></li>
-															<li class="normal_menu"><a href="portfolio-style1-3column-fullwidth.html">Three Columns Fullwidth</a></li>
-															<li class="normal_menu"><a href="portfolio-style1-3column-fullwidth-nospaces.html">Three Columns Fullwidth2</a></li>
-															
-															<li class="normal_menu"><a href="portfolio-style1-4column-boxed.html">Four Columns Boxed</a></li>
-															<li class="normal_menu"><a href="portfolio-style1-4column-boxed-nospaces.html">Four Columns Boxed2</a></li>
-															<li class="normal_menu"><a href="portfolio-style1-4column-fullwidth.html">Four Columns Fullwidth</a></li>
-															<li class="normal_menu"><a href="portfolio-style1-4column-fullwidth-nospaces.html">Four Columns Fullwidth2</a></li>
-															
-															<li class="normal_menu"><a href="portfolio-style1-2column-boxed.html">Two Columns Boxed</a></li>
-															<li class="normal_menu"><a href="portfolio-style1-2column-boxed-nospaces.html">Two Columns Boxed2</a></li>
-															<li class="normal_menu"><a href="portfolio-style1-2column-fullwidth.html">Two Columns Fullwidth</a></li>
-															<li class="normal_menu"><a href="portfolio-style1-2column-fullwidth-nospaces.html">Two Columns Fullwidth2</a></li>
-														</ul>
-													</li>
-													<li class="normal_menu"><a href="#">Filter Style 2</a>
-														<ul>
-															<li class="normal_menu"><a href="portfolio-style2-3column-boxed.html">Three Columns Boxed</a></li>
-															<li class="normal_menu"><a href="portfolio-style2-3column-boxed-nospaces.html">Three Columns Boxed2</a></li>
-															<li class="normal_menu"><a href="portfolio-style2-3column-fullwidth.html">Three Columns Fullwidth</a></li>
-															<li class="normal_menu"><a href="portfolio-style2-3column-fullwidth-nospaces.html">Three Columns Fullwidth2</a></li>
-															
-															<li class="normal_menu"><a href="portfolio-style2-4column-boxed.html">Four Columns Boxed</a></li>
-															<li class="normal_menu"><a href="portfolio-style2-4column-boxed-nospaces.html">Four Columns Boxed2</a></li>
-															<li class="normal_menu"><a href="portfolio-style2-4column-fullwidth.html">Four Columns Fullwidth</a></li>
-															<li class="normal_menu"><a href="portfolio-style2-4column-fullwidth-nospaces.html">Four Columns Fullwidth2</a></li>
-															
-															<li class="normal_menu"><a href="portfolio-style2-2column-boxed.html">Two Columns Boxed</a></li>
-															<li class="normal_menu"><a href="portfolio-style2-2column-boxed-nospaces.html">Two Columns Boxed2</a></li>
-															<li class="normal_menu"><a href="portfolio-style2-2column-fullwidth.html">Two Columns Fullwidth</a></li>
-															<li class="normal_menu"><a href="portfolio-style2-2column-fullwidth-nospaces.html">Two Columns Fullwidth2</a></li>
-														</ul>
-													</li>
-													<li class="normal_menu"><a href="#">Filter Style 3</a>
-														<ul>
-															<li class="normal_menu"><a href="portfolio-style3-3column-boxed.html">Three Columns Boxed</a></li>
-															<li class="normal_menu"><a href="portfolio-style3-3column-boxed-nospaces.html">Three Columns Boxed2</a></li>
-															<li class="normal_menu"><a href="portfolio-style3-3column-fullwidth.html">Three Columns Fullwidth</a></li>
-															<li class="normal_menu"><a href="portfolio-style3-3column-fullwidth-nospaces.html">Three Columns Fullwidth2</a></li>
-															
-															<li class="normal_menu"><a href="portfolio-style3-4column-boxed.html">Four Columns Boxed</a></li>
-															<li class="normal_menu"><a href="portfolio-style3-4column-boxed-nospaces.html">Four Columns Boxed2</a></li>
-															<li class="normal_menu"><a href="portfolio-style3-4column-fullwidth.html">Four Columns Fullwidth</a></li>
-															<li class="normal_menu"><a href="portfolio-style3-4column-fullwidth-nospaces.html">Four Columns Fullwidth2</a></li>
-															
-															<li class="normal_menu"><a href="portfolio-style3-2column-boxed.html">Two Columns Boxed</a></li>
-															<li class="normal_menu"><a href="portfolio-style3-2column-boxed-nospaces.html">Two Columns Boxed2</a></li>
-															<li class="normal_menu"><a href="portfolio-style3-2column-fullwidth.html">Two Columns Fullwidth</a></li>
-															<li class="normal_menu"><a href="portfolio-style3-2column-fullwidth-nospaces.html">Two Columns Fullwidth2</a></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li class="normal_menu"><a href="#">Portfolio Masonry</a>
-												<ul>
-													<li class="normal_menu"><a href="#">Masonry Style 1</a>
-														<ul>
-															<li class="normal_menu"><a href="portfolio-masonry-style1-fullwidth.html">Masonry Fullwidth</a></li>
-															<li class="normal_menu"><a href="portfolio-masonry-style1-boxed.html">Masonry Boxed</a></li>
-															<li class="normal_menu"><a href="portfolio-masonry-style1-columns.html">Masonry Columns</a></li>
-														</ul>
-													</li>
-											    
-													<li class="normal_menu"><a href="#">Masonry Style 2</a>
-														<ul>
-															<li class="normal_menu"><a href="portfolio-masonry-style2-fullwidth.html">Masonry Fullwidth</a></li>
-															<li class="normal_menu"><a href="portfolio-masonry-style2-boxed.html">Masonry Boxed</a></li>
-															<li class="normal_menu"><a href="portfolio-masonry-style2-columns.html">Masonry Columns</a></li>
-														</ul>
-													</li>
-													<li class="normal_menu"><a href="#">Masonry Style 3</a>
-														<ul>
-															<li class="normal_menu"><a href="portfolio-masonry-style3-fullwidth.html">Masonry Fullwidth</a></li>
-															<li class="normal_menu"><a href="portfolio-masonry-style3-boxed.html">Masonry Boxed</a></li>
-															<li class="normal_menu"><a href="portfolio-masonry-style3-columns.html">Masonry Columns</a></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li class="normal_menu"><a href="#">Portfolio Single</a>
-												<ul>
-													<li class="normal_menu"><a href="portfolio-single-gallery.html">Photo Gallery</a></li>
-													<li class="normal_menu"><a href="portfolio-single-video.html">Video Project</a></li>
-													<li class="normal_menu"><a href="portfolio-single-image.html">Image Project</a></li>
-													<li class="normal_menu"><a href="portfolio-single-sound.html">Audio Project</a></li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-									<li class="normal_menu"><a href="page-contact-us.html">Contact Us</a></li>
-									<li class="normal_menu"><a href="page-faq.html">FAQ</a></li>
-									<li class="normal_menu"><a href="page-careers.html">Careers</a></li>
-									<li class="normal_menu"><a href="page-404.html">404</a></li>
-									<li class="normal_menu"><a href="page-coming-soon.html">Coming Soon</a></li>
-									<li class="normal_menu"><a href="page-under-construction.html">Under Structure</a></li>
-									<li class="normal_menu"><a href="page-sitemap.html">sitemap</a></li>
-									<li class="normal_menu">
-										<a href="page-login-register.html">Register/Login</a>
-										<ul>
-											<li class="normal_menu">
-												<a href="page-login-register.html">Register/Login Style 1</a>
-											</li>
-											<li class="normal_menu">
-												<a href="page-login-register2.html">Register/Login Style 2</a>
-											</li>
-										</ul>
-									</li>
-									<li class="normal_menu"><a href="portfolio-single-gallery.html">Project Details</a></li>
-									<li class="normal_menu"><a href="#"><span class="menu_special_color">More Pages Soon ...</span></a></li>
-								</ul-->
+								<a href="<?php echo base_url(); ?>aptikma/aboutus"><span>Tentang Kami</span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-							    <a href="#"><span>Layanan</span></a>
-								<!--ul>
-									<li class="normal_menu"><a href="slider-revolution-fullwidth.html"><i class="menu_icon ico-heart4"></i>Revolution Slider</a>
-										<ul>
-											<li class="normal_menu"><a href="slider-revolution-fullscreen.html">Fullscreen</a></li>
-											<li class="normal_menu"><a href="slider-revolution-fullwidth.html">Full Width</a></li>
-											<li class="normal_menu"><a href="slider-revolution-boxed-fullwidth.html">Boxed FullWidth</a></li>
-											<li class="normal_menu"><a href="slider-revolution-boxed-fullscreen.html">Boxed FullScreen</a></li>
-											<li class="normal_menu"><a href="slider-revolution-panzoom-fullscreen.html">Panzoom FullScreen</a></li>
-											<li class="normal_menu"><a href="slider-revolution-panzoom-fullwidth.html">Panzoom FullWidth</a></li>
-											<li class="normal_menu"><a href="slider-revolution-html-video-fullwidth.html">HTML5 Video FullWidth</a></li>
-											<li class="normal_menu"><a href="slider-revolution-html-video-fullscreen.html">HTML5 Video FullScreen</a></li>
-										</ul>
-									</li>
-									<li class="normal_menu"><a href="slider-flex-fullwidth.html"><i class="menu_icon  ico-image4"></i>Flex slider</a>
-										<ul>
-											<li class="normal_menu"><a href="slider-flex-fullwidth.html">Full Width</a></li>
-											<li class="normal_menu"><a href="slider-flex-boxed.html">Boxed Width</a></li>
-											<li class="normal_menu"><a href="slider-flex-fullwidth-without-thumbs.html">Full Width No Thumbs</a></li>
-											<li class="normal_menu"><a href="slider-flex-boxed-without-thumbs.html">Boxed Width No Thumbs</a></li>
-										</ul>
-									</li>
-									<li class="normal_menu"><a href="slider-owl-default.html"><i class="menu_icon ico-eye4"></i>Owl slider</a>
-										<ul>
-											<li class="normal_menu"><a href="slider-owl-default.html">Defailt Slider</a></li>
-											<li class="normal_menu"><a href="slider-owl-portfolio.html">Portfolio Slider</a></li>
-											<li class="normal_menu"><a href="slider-owl-features.html">Features Slider</a></li>
-											<li class="normal_menu"><a href="slider-owl-text.html">Text Slider</a></li>
-											<li class="normal_menu"><a href="slider-owl-products.html">Products Slider</a></li>
-											<li class="normal_menu"><a href="slider-owl-gallery.html">Gallery Slider</a></li>    
-										</ul>
-									</li>
-									<li class="normal_menu"><a href="slider-camera-fullwidth.html"><i class="menu_icon ico-camera4"></i>Camera Slider</a>
-										<ul>
-											<li class="normal_menu"><a href="slider-camera-fullwidth.html">Full Width</a></li>
-											<li class="normal_menu"><a href="slider-camera-fullwidth-with-thums.html">Full Width Thumbs</a></li>
-										</ul>
-									</li>
-									<li class="normal_menu"><a href="slider-scattered.html"><i class="menu_icon ico-monitor2"></i>Scattered Slider</a></li>
-									<li class="normal_menu"><a href="slider-wobbly.html"><i class="menu_icon ico-trophy3"></i>Wobbly Slider</a></li>
-									<li class="normal_menu">
-										<a href="#"><i class="menu_icon ico-store"></i>Four Boxes Slider</a>
-										<ul>
-											<li class="normal_menu"><a href="slider-four-boxes-effect-1.html">Effect 1</a></li>
-											<li class="normal_menu"><a href="slider-four-boxes-effect-2.html">Effect 2</a></li>
-											<li class="normal_menu"><a href="slider-four-boxes-effect-3.html">Effect 3</a></li>
-										</ul>
-									</li>
-									<li class="normal_menu"><a href="#"><span class="menu_special_color">More Sliders Soon ...</span></a></li>
-								</ul-->
+							    <a href="<?php echo base_url(); ?>aptikma/services"><span>Layanan</span></a>
 							</li>
-							<!--li class="has_mega_menu mobile_menu_toggle">
-							    <a href="#"><span>Shortcodes</span></a>
-							    <ul class="mega_menu">
-								<li>
-									<a href="#">Sliders</a>
-									<ul class="mega_menu_in clearfix">
-										<li>
-											<a href="#">Revolution slider</a>
-											<ul class="clearfix">
-												<li>
-													<a href="#">Default</a>
-													<ul class="clearfix">
-														<li><a href="slider-revolution-fullscreen.html">Default Fullscreen</a></li>
-														<li><a href="slider-revolution-fullwidth.html">Default Full Width</a></li>
-													</ul>
-												</li>
-												<li>
-													<a href="#">Boxed</a>
-													<ul class="clearfix">
-														<li><a href="slider-revolution-boxed-fullwidth.html">Boxed FullWidth</a></li>
-														<li><a href="slider-revolution-boxed-fullscreen.html">Boxed FullScreen</a></li>
-													</ul>
-												</li>
-												<li>
-													<a href="#">Panzoom</a>
-													<ul class="clearfix">
-														<li><a href="slider-revolution-panzoom-fullscreen.html">Panzoom FullScreen</a></li>
-														<li><a href="slider-revolution-panzoom-fullwidth.html">Panzoom FullWidth</a></li>
-													</ul>
-												</li>
-												<li>
-													<a href="#">HTML5 Video</a>
-													<ul class="clearfix">
-														<li><a href="slider-revolution-html-video-fullwidth.html">HTML5 Video FullWidth</a></li>
-														<li><a href="slider-revolution-html-video-fullscreen.html">HTML5 Video FullScreen</a></li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<a href="#">Flex slider</a>
-											<ul class="clearfix">
-												<li>
-													<a href="slider-flex-fullwidth.html">Full Width</a>
-												</li>
-												<li>
-													<a href="slider-flex-boxed.html ">Boxed Width</a>
-												</li>
-												<li>
-													<a href="slider-flex-fullwidth-without-thumbs.html">Full Width No Thumbs</a>
-												</li>
-												<li>
-													<a href="slider-flex-boxed-without-thumbs.html">Boxed Width No Thumbs</a>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<a href="#">Owl slider</a>
-											<ul class="clearfix">
-												<li>
-													<a href="slider-owl-default.html">Defailt Slider</a>
-												</li>
-												<li>
-													<a href="slider-owl-portfolio.html">Portfolio Slider</a>
-												</li>
-												<li>
-													<a href="slider-owl-features.html">Features Slider</a>
-												</li>
-												<li>
-													<a href="slider-owl-text.html">Text Slider</a>
-												</li>
-												<li>
-													<a href="slider-owl-products.html">Products Slider</a>
-												</li>
-												<li>
-													<a href="slider-owl-gallery.html">Gallery Slider</a>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<a href="slider-scattered.html">Scattered Slider</a>
-										</li>
-										<li>
-											<a href="#">Four Boxes Slider</a>
-											<ul class="clearfix">
-												<li>
-													<a href="slider-four-boxes-effect-1.html">Effect 1</a>
-												</li>
-												<li>
-													<a href="slider-four-boxes-effect-2.html">Effect 2</a>
-												</li>
-												<li>
-													<a href="slider-four-boxes-effect-3.html">Effect 3</a>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<a href="slider-wobbly.html">Wobbly Slider</a>
-										</li>
-										<li>
-											<a href="#">Camera Slider</a>
-											<ul class="clearfix">
-												<li>
-													<a href="slider-camera-fullwidth.html">Full Width</a>
-												</li>
-												<li>
-													<a href="slider-camera-fullwidth-with-thums.html">Full Width Thumbs</a>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								    
-								</li>
-								<li>
-									<a href="#">Shortcodes Group 1</a>
-									<ul class="mega_menu_in clearfix">
-										<li><a href="elements-background-video.html">video Background</a></li>
-										<li><a href="elements-accordion.html">Accordion</a></li>
-										<li><a href="elements-tabs.html">Tabs</a></li>
-										<li><a href="elements-banner-text.html">Banner Text</a></li>
-										<li><a href="elements-titles-and-headings.html">Titles and Headings</a></li>
-										<li><a href="elements-pies-and-skills.html">Pies & Skills</a></li>
-										<li><a href="elements-team.html">Team</a></li>
-									</ul>
-								</li>
-					    
-								<li>
-									<a href="#">Shortcodes Group 2</a>
-									<ul class="mega_menu_in clearfix">
-										<li><a href="elements-testimonials.html">Testimonials</a></li>
-										<li><a href="elements-clients.html">Clients</a></li>
-										<li><a href="elements-counters.html">Counters</a></li>
-										<li><a href="elements-icon-boxes.html">Icon Boxes</a></li>
-										<li><a href="elements-carousel.html">Carousel</a></li>
-										<li><a href="elements-buttons.html">Buttons</a></li>
-										<li><a href="elements-maps.html">Google Maps</a></li>
-									</ul>
-								</li>
-					    
-								<li>
-									<a href="#">Shortcodes Group 3</a>
-									<ul class="mega_menu_in clearfix">
-										<li><a href="elements-galleries.html">Galleries</a></li>
-										<li><a href="elements-tooltip.html">Tooltip</a></li>
-										<li><a href="elements-tables.html">Tables</a></li>
-										<li><a href="elements-charts.html">Charts</a></li>
-										<li><a href="elements-lightbox.html">Lightbox</a></li>
-										<li><a href="elements-pricing-tables.html">Pricing Tables</a></li>
-										<li><a href="elements-features.html">Features</a></li>
-									</ul>
-								</li>
-							    </ul>	
-							</li-->
 							<li class="has_tab_menu mobile_menu_toggle">
 								<a href="#"><span>Portfolio</span></a>
-								<!--ul class="tab_menu clearfix">
-									<li class="tab_menu_con">
-										<ul class="tab_menu_list">
-											<li class="tab_menu_item active">
-												<a href="#"><i class="menu_icon ico-image4"></i>Filter 2 Columns</a>
-												<ul class="mega_menu">
-													<li><a href="#">Style 1</a>
-														<ul>
-															<li><a href="portfolio-style1-2column-boxed.html">Two Columns Boxed</a></li>
-															<li><a href="portfolio-style1-2column-boxed-nospaces.html">Two Columns Boxed2</a></li>
-															<li><a href="portfolio-style1-2column-fullwidth.html">Two Columns Fullwidth</a></li>
-															<li><a href="portfolio-style1-2column-fullwidth-nospaces.html">Two Columns Fullwidth2</a></li>
-														</ul>
-													</li>
-													<li><a href="#">Style 2</a>
-														<ul>
-															<li><a href="portfolio-style2-2column-boxed.html">Two Columns Boxed</a></li>
-															<li><a href="portfolio-style2-2column-boxed-nospaces.html">Two Columns Boxed2</a></li>
-															<li><a href="portfolio-style2-2column-fullwidth.html">Two Columns Fullwidth</a></li>
-															<li><a href="portfolio-style2-2column-fullwidth-nospaces.html">Two Columns Fullwidth2</a></li>														
-														</ul>
-													</li>
-													<li><a href="#">Style 3</a>
-														<ul>
-															<li><a href="portfolio-style3-2column-boxed.html">Two Columns Boxed</a></li>
-															<li><a href="portfolio-style3-2column-boxed-nospaces.html">Two Columns Boxed2</a></li>
-															<li><a href="portfolio-style3-2column-fullwidth.html">Two Columns Fullwidth</a></li>
-															<li><a href="portfolio-style3-2column-fullwidth-nospaces.html">Two Columns Fullwidth2</a></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li class="tab_menu_item">
-												<a href="#"><i class="menu_icon ico-portfolio"></i>Filter 3 Columns</a>
-												<ul class="mega_menu">
-													<li><a href="#">Style 1</a>
-														<ul>
-															<li><a href="portfolio-style1-3column-boxed.html">Three Columns Boxed</a></li>
-															<li><a href="portfolio-style1-3column-boxed-nospaces.html">Three Columns Boxed2</a></li>
-															<li><a href="portfolio-style1-3column-fullwidth.html">Three Columns Fullwidth</a></li>
-															<li><a href="portfolio-style1-3column-fullwidth-nospaces.html">Three Columns Fullwidth2</a></li>
-														</ul>
-													</li>
-													<li><a href="#">Style 2</a>
-														<ul>
-															<li><a href="portfolio-style2-3column-boxed.html">Three Columns Boxed</a></li>
-															<li><a href="portfolio-style2-3column-boxed-nospaces.html">Three Columns Boxed2</a></li>
-															<li><a href="portfolio-style2-3column-fullwidth.html">Three Columns Fullwidth</a></li>
-															<li><a href="portfolio-style2-3column-fullwidth-nospaces.html">Three Columns Fullwidth2</a></li>														
-														</ul>
-													</li>
-													<li><a href="#">Style 3</a>
-														<ul>
-															<li><a href="portfolio-style3-3column-boxed.html">Three Columns Boxed</a></li>
-															<li><a href="portfolio-style3-3column-boxed-nospaces.html">Three Columns Boxed2</a></li>
-															<li><a href="portfolio-style3-3column-fullwidth.html">Three Columns Fullwidth</a></li>
-															<li><a href="portfolio-style3-3column-fullwidth-nospaces.html">Three Columns Fullwidth2</a></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li class="tab_menu_item">
-												<a href="#"><i class="menu_icon ico-grid3"></i>Filter 4 Columns</a>
-												<ul class="mega_menu">
-													<li><a href="#">Style 1</a>
-														<ul>
-															<li><a href="portfolio-style1-4column-boxed.html">Four Columns Boxed</a></li>
-															<li><a href="portfolio-style1-4column-boxed-nospaces.html">Four Columns Boxed2</a></li>
-															<li><a href="portfolio-style1-4column-fullwidth.html">Four Columns Fullwidth</a></li>
-															<li><a href="portfolio-style1-4column-fullwidth-nospaces.html">Four Columns Fullwidth2</a></li>
-														</ul>
-													</li>
-													<li><a href="#">Style 2</a>
-														<ul>
-															<li><a href="portfolio-style2-4column-boxed.html">Four Columns Boxed</a></li>
-															<li><a href="portfolio-style2-4column-boxed-nospaces.html">Four Columns Boxed2</a></li>
-															<li><a href="portfolio-style2-4column-fullwidth.html">Four Columns Fullwidth</a></li>
-															<li><a href="portfolio-style2-4column-fullwidth-nospaces.html">Four Columns Fullwidth2</a></li>
-														</ul>
-													</li>
-													<li><a href="#">Style 3</a>
-														<ul> 
-															<li><a href="portfolio-style3-4column-boxed.html">Four Columns Boxed</a></li>
-															<li><a href="portfolio-style3-4column-boxed-nospaces.html">Four Columns Boxed2</a></li>
-															<li><a href="portfolio-style3-4column-fullwidth.html">Four Columns Fullwidth</a></li>
-															<li><a href="portfolio-style3-4column-fullwidth-nospaces.html">Four Columns Fullwidth2</a></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li class="tab_menu_item">
-												<a href="#"><i class="menu_icon ico-screen"></i>Portfolio Masonry</a>
-												<ul class="mega_menu">
-													<li><a href="#">Masonry Style 1</a>
-														<ul>
-															<li><a href="portfolio-masonry-style1-fullwidth.html">Masonry Fullwidth</a></li>
-															<li><a href="portfolio-masonry-style1-boxed.html">Masonry Boxed</a></li>
-															<li><a href="portfolio-masonry-style1-columns.html">Masonry Columns</a></li>
-														</ul>
-													</li>
-			                   
-													<li><a href="#">Masonry Style 2</a>
-														<ul>
-															<li><a href="portfolio-masonry-style2-fullwidth.html">Masonry Fullwidth</a></li>
-															<li><a href="portfolio-masonry-style2-boxed.html">Masonry Boxed</a></li>
-															<li><a href="portfolio-masonry-style2-columns.html">Masonry Columns</a></li>														</ul>
-													</li>
-													<li><a href="#">Masonry Style 3</a>
-														<ul>
-															<li><a href="portfolio-masonry-style3-fullwidth.html">Masonry Fullwidth</a></li>
-															<li><a href="portfolio-masonry-style3-boxed.html">Masonry Boxed</a></li>
-															<li><a href="portfolio-masonry-style3-columns.html">Masonry Columns</a></li>														</ul>
-													</li>
-												</ul>
-											</li>
-											<li class="tab_menu_item">
-												<a href="#"><i class="menu_icon ico-task"></i>Portfolio Single</a>
-												<ul class="mega_menu">
-													<li><a href="#">Single Pages</a>
-														<ul>
-															<li><a href="portfolio-single-gallery.html">Photo Gallery</a></li>
-															<li><a href="portfolio-single-video.html">Video Project</a></li>
-															<li><a href="portfolio-single-image.html">Image Project</a></li>
-															<li><a href="portfolio-single-sound.html">Audio Project</a></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li class="tab_menu_item">
-											    <a href="#"><i class="menu_icon ico-gallery"></i>Portfolio Carousel</a>
-												<ul class="image_menu">													<li class="image_menu_slide">
-														<div class="img_menu_i">
-															<a href="#">
-																<img src="images/portfolio/porto1.jpg" alt="Project Name" >
-																<span>Project Name</span>
-															</a>
-														</div>
-														<div class="img_menu_i">
-															<a href="#">
-																<img src="images/portfolio/porto2.jpg" alt="Project Name" >
-																<span>Project Name</span>
-															</a>
-														</div>
-														<div class="img_menu_i">
-															<a href="#">
-																<img src="images/portfolio/porto3.jpg" alt="Project Name" >
-																<span>Project Name</span>
-															</a>
-														</div>
-														<div class="img_menu_i">
-															<a href="#">
-																<img src="images/portfolio/porto4.jpg" alt="Project Name" >
-																<span>Project Name</span>
-															</a>
-														</div>
-														<div class="img_menu_i">
-															<a href="#">
-																<img src="images/portfolio/porto5.jpg" alt="Project Name" >
-																<span>Project Name</span>
-															</a>
-														</div>
-														<div class="img_menu_i">
-															<a href="#">
-																<img src="images/portfolio/porto6.jpg" alt="Project Name" >
-																<span>Project Name</span>
-															</a>
-														</div>
-													</li>
-												</ul>
-											</li>
-											
-											<li class="tab_menu_item">
-												<a href="#"><i class="menu_icon ico-menu2"></i>About Our Portfolio</a>
-												<ul class="html_content_menu">
-													<li>
-														<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour of this randomised words which don't look even slightly believable If you are going to use a passage of Lorem Ipsum passages of Lorem Ipsum available, but the majority have suffered.</p>
-														<p>passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour of this randomised words which don't look even slightly believable If you are going to use a passage of Lorem Ipsum you are going to use a passage of Lorem Ipsum.</p>
-													</li>
-												</ul>
-											</li> 
-										</ul>
-									</li>
-								</ul-->
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
 								<a href="#"><span>Kontak</span></a>
-								<!--ul>
-									<li class="normal_menu">
-										<a href="blog-single-gallery.html">Blog Single Post</a>
-										<ul>
-											<li class="normal_menu"><a href="blog-single-image.html">Standard Post</a></li>
-											<li class="normal_menu"><a href="blog-single-gallery.html">Gallery Post</a></li>
-											<li class="normal_menu"><a href="blog-single-vimeo-video.html">Vimeo Video Post</a></li>
-											<li class="normal_menu"><a href="blog-single-youtube-video.html">Youtube Video Post</a></li>
-											<li class="normal_menu"><a href="blog-single-self-hosted-video.html">Self Hosted Video Post</a></li>
-											<li class="normal_menu"><a href="blog-single-soundcloud-audio.html">SoundCloud Audio Post</a></li>
-											<li class="normal_menu"><a href="blog-single-self-hosted-audio.html">Self Hosted Audio Post</a></li>
-											<li class="normal_menu"><a href="blog-single-quote.html">Blockquote post</a></li>
-											<li class="normal_menu"><a href="blog-single-sidebar-right.html">Sidebar Right</a></li>
-											<li class="normal_menu"><a href="blog-single-sidebar-left.html">Sidebar Left</a></li>
-											<li class="normal_menu"><a href="blog-single-fullwidth.html">Full Width</a></li>
-										</ul>
-									</li>
-									<li class="normal_menu">
-										<a href="blog-masonry-colored.html">Blog Masonry</a>
-										<ul>
-											<li class="normal_menu"><a href="blog-masonry-colored.html">colored columns</a></li>
-											<li class="normal_menu"><a href="blog-masonry-simple.html">simple columns</a></li>
-											<li class="normal_menu"><a href="blog-masonry-colored-fullwidth-three-columns.html">full three columns</a></li>
-											<li class="normal_menu"><a href="blog-masonry-colored-fullwidth-four-columns.html">full four columns</a></li>
-											<li class="normal_menu"><a href="blog-masonry-colored-boxed-three-columns.html">boxed three columns</a></li>
-											<li class="normal_menu"><a href="blog-masonry-colored-boxed-four-columns.html">boxed four columns</a></li>
-											<li class="normal_menu"><a href="blog-masonry-colored-boxed-two-columns.html">boxed two columns</a></li>
-											<li class="normal_menu"><a href="blog-masonry-colored-boxed-sidebar-right.html">boxed sidebar right</a></li>
-											<li class="normal_menu"><a href="blog-masonry-colored-boxed-sidebar-left.html">boxed sidebar left</a></li>
-											
-										</ul>
-									</li>
-									<li class="normal_menu">
-										<a href="blog-list.html">Blog List </a>
-										<ul>
-											<li class="normal_menu"><a href="blog-list.html"> full width</a></li>
-											<li class="normal_menu"><a href="blog-list-sidebar-right.html">sidebar right</a></li>
-											<li class="normal_menu"><a href="blog-list-sidebar-left.html">sidebar left</a></li>
-										</ul>
-									</li>
-									<li class="normal_menu"><a href="blog-timeline.html">Blog Timeline</a></li>
-									<li class="normal_menu">
-										<a href="blog-standard-sidebar-right.html">Blog Standard</a>
-										<ul>
-											<li class="normal_menu"><a href="blog-standard-fullwidth.html">full width</a></li>
-											<li class="normal_menu"><a href="blog-standard-sidebar-left.html">sidebar left</a></li>
-											<li class="normal_menu"><a href="blog-standard-sidebar-right.html">sidebar right</a></li>
-										</ul>
-									</li>
-									<li class="normal_menu"><a href="blog-carousel.html">Blog Carousel</a></li>
-									<li class="normal_menu"><a href="blog-grid.html">Blog Grids</a></li>
-								</ul-->
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
 								<a href="#"><span>Blog</span></a>
@@ -1001,9 +406,9 @@
 	<!-- Intro Banner -->
 	<div class="welcome_banner full_gray" style="background: #324545;">
 		<div class="content clearfix">
-			<h3><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></h3>
+			<h3><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></h3>
 			<a href="#" target="_self" class="btn_a f_right">
-			    <span><i class="in_left ico-cart"></i><span><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></span><i class="in_right ico-cart"></i></span>
+			    <span><i class="in_left ico-cart"></i><span><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></span><i class="in_right ico-cart"></i></span>
 			</a>
 		</div>
 	</div>  
@@ -1016,8 +421,8 @@
 				<div class="service_box">
 					<span class="icon circle"><img src="<?php echo base_url(); ?>assets/images/icons/browser.png" alt="Super Coding"></span>
 					<div class="service_box_con">
-						<h3><?php echo $services->title_id; ?></h3>
-						<span class="desc"><?php echo $services->desc_id; ?></span>
+						<h3><?php echo $services["title_".WEB_LANG]; ?></h3>
+						<span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>
 						<a href="#" class="ser-box-link"><span></span>Read More</a>
 					</div>
 				</div>
@@ -1026,8 +431,8 @@
 				<div class="service_box">
 					<span class="icon circle"><img src="<?php echo base_url(); ?>assets/images/icons/console.png" alt="Best User Interface"></span>
 					<div class="service_box_con">
-						<h3><?php $services=$services_homepage->next_row(); echo $services->title_id; ?></h3>
-						<span class="desc"><?php echo $services->desc_id; ?></span>
+						<h3><?php $services=(array)$services_homepage->next_row(); echo $services['title_'.WEB_LANG]; ?></h3>
+						<span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>
 						<a href="#" class="ser-box-link"><span></span>Read More</a>
 					</div>
 				</div>
@@ -1036,8 +441,8 @@
 				<div class="service_box">
 					<span class="icon circle"><img src="<?php echo base_url(); ?>assets/images/icons/weather.png" alt="Unique Design"></span>
 					<div class="service_box_con">
-						<h3><?php $services=$services_homepage->next_row(); echo $services->title_id; ?></h3>
-						<span class="desc"><?php echo $services->desc_id; ?></span>
+						<h3><?php $services=(array)$services_homepage->next_row(); echo $services('title_'.WEB_LANG); ?></h3>
+						<span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>
 						<a href="#" class="ser-box-link"><span></span>Read More</a>
 					</div>
 				</div>
@@ -1046,8 +451,8 @@
 				<div class="service_box">
 					<span class="icon circle"><img src="<?php echo base_url(); ?>assets/images/icons/browser.png" alt="Super Coding"></span>
 					<div class="service_box_con">
-						<h3><?php $services=$services_homepage->next_row(); echo $services->title_id; ?></h3>
-						<span class="desc"><?php echo $services->desc_id; ?></span>
+						<h3><?php $services=(array)$services_homepage->next_row(); echo $services['title_'.WEB_LANG]; ?></h3>
+						<span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>
 						<a href="#" class="ser-box-link"><span></span>Read More</a>
 					</div>
 				</div>
@@ -1056,8 +461,8 @@
 				<div class="service_box">
 					<span class="icon circle"><img src="<?php echo base_url(); ?>assets/images/icons/console.png" alt="Best User Interface"></span>
 					<div class="service_box_con">
-						<h3><?php $services=$services_homepage->next_row(); echo $services->title_id; ?></h3>
-						<span class="desc"><?php echo $services->desc_id; ?></span>
+						<h3><?php $services=(array)$services_homepage->next_row(); echo $services['title_'.WEB_LANG]; ?></h3>
+						<span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>
 						<a href="#" class="ser-box-link"><span></span>Read More</a>
 					</div>
 				</div>
@@ -1066,8 +471,8 @@
 				<div class="service_box">
 					<span class="icon circle"><img src="<?php echo base_url(); ?>assets/images/icons/weather.png" alt="Unique Design"></span>
 					<div class="service_box_con">
-						<h3><?php $services=$services_homepage->next_row(); echo $services->title_id; ?></h3>
-						<span class="desc"><?php echo $services->desc_id; ?></span>
+						<h3><?php $services=(array)$services_homepage->next_row(); echo $services['title_'.WEB_LANG]; ?></h3>
+						<span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>
 						<a href="#" class="ser-box-link"><span></span>Read More</a>
 					</div>
 				</div>
@@ -1189,7 +594,7 @@
 		
 	        <div class="container icons_spacer">
 			<div class="main_title centered upper">
-				<h2>Our Services</h2>
+				<h2><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></h2>
 			</div>
 			
 			<!-- Icon Boxes Con -->
@@ -1198,8 +603,8 @@
 					<div class="service_box">
 						<a href="#"><span class="icon circle"><i class="ico-desktop2"></i></span></a>
 						<div class="service_box_con">
-							<h3>Premium Sliders Included</h3>
-							<span class="desc">There are many variations of demo text passed sages of Lorem Ipsum available the majority.</span>
+							<h3><?php echo $whychoose["title_".WEB_LANG]; ?></h3>
+							<span class="desc"><?php echo $whychoose["desc_".WEB_LANG]; ?></span>
 						</div>
 					</div>
 				</div>
@@ -1207,8 +612,8 @@
 					<div class="service_box">
 						<a href="#"><span class="icon circle"><i class="ico-tablet3"></i></span></a>
 						<div class="service_box_con">
-							<h3>100% Responsive Layout</h3>
-							<span class="desc">There are many variations of demo text passed sages of Lorem Ipsum available the majority.</span>
+							<h3><?php $whychoose=(array)$whychoose_homepage->next_row(); echo $whychoose["title_".WEB_LANG]; ?></h3>
+							<span class="desc"><?php echo $whychoose["desc_".WEB_LANG]; ?></span>
 						</div>
 					</div>
 				</div>
@@ -1216,8 +621,8 @@
 					<div class="service_box">
 						<a href="#"><span class="icon circle"><i class="ico-beaker"></i></span></a>
 						<div class="service_box_con">
-							<h3>Powerful Performance</h3>
-							<span class="desc">There are many variations of demo text passed sages of Lorem Ipsum available the majority.</span>
+							<h3><?php $whychoose=(array)$whychoose_homepage->next_row(); echo $whychoose["title_".WEB_LANG]; ?></h3>
+							<span class="desc"><?php echo $whychoose["desc_".WEB_LANG]; ?></span>
 						</div>
 					</div>
 				</div>
@@ -1225,8 +630,8 @@
 					<div class="service_box">
 						<a href="#"><span class="icon circle"><i class="ico-streetsign"></i></span></a>
 						<div class="service_box_con">
-							<h3>Awesome Mega menu</h3>
-							<span class="desc">There are many variations of demo text passed sages of Lorem Ipsum available the majority.</span>
+							<h3><?php $whychoose=(array)$whychoose_homepage->next_row(); echo $whychoose["title_".WEB_LANG]; ?></h3>
+							<span class="desc"><?php echo $whychoose["desc_".WEB_LANG]; ?></span>
 						</div>
 					</div>
 				</div>
@@ -1234,8 +639,8 @@
 					<div class="service_box">
 						<a href="#"><span class="icon circle"><i class="ico-beaker"></i></span></a>
 						<div class="service_box_con">
-							<h3>Powerful Performance</h3>
-							<span class="desc">There are many variations of demo text passed sages of Lorem Ipsum available the majority.</span>
+							<h3><?php $whychoose=(array)$whychoose_homepage->next_row(); echo $whychoose["title_".WEB_LANG]; ?></h3>
+							<span class="desc"><?php echo $whychoose["desc_".WEB_LANG]; ?></span>
 						</div>
 					</div>
 				</div>
@@ -1243,8 +648,8 @@
 					<div class="service_box">
 						<a href="#"><span class="icon circle"><i class="ico-streetsign"></i></span></a>
 						<div class="service_box_con">
-							<h3>Awesome Mega menu</h3>
-							<span class="desc">There are many variations of demo text passed sages of Lorem Ipsum available the majority.</span>
+							<h3><?php $whychoose=(array)$whychoose_homepage->next_row(); echo $whychoose["title_".WEB_LANG]; ?></h3>
+							<span class="desc"><?php echo $whychoose["desc_".WEB_LANG]; ?></span>
 						</div>
 					</div>
 				</div>
@@ -1261,7 +666,7 @@
 	    
 		    <div class="content">
 			<div class="main_title centered upper">
-			    <h2><span class="line"><i class="ico-wallet-travel"></i></span>Our Portfolio</h2>
+			    <h2><span class="line"><i class="ico-wallet-travel"></i></span><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></h2>
 			</div>
 		    </div>
 		
@@ -1491,7 +896,7 @@
 	<section class="content_section bg_gray">
 		<div class="content row_spacer no_padding">	
 			<div class="main_title centered upper">
-				<h2><span class="line"><i class="ico-pencil2"></i></span>From The Blog</h2>
+				<h2><span class="line"><i class="ico-pencil2"></i></span><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></h2>
 			</div>
 			
 			<!-- Filter Content -->
@@ -1859,47 +1264,47 @@
 	<section class="content_section">
 		<div class="title_banner t_b_color3 upper centered">
 			<div class="content">
-				<h2>Contact Us</h2>
+				<h2><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></h2>
 			</div>
 		</div>
 		<div class="content row_spacer no_padding">	
 			<div class="rows_container clearfix">
 				<div class="col-md-6">
-					<h2 class="title1 upper">Get On Touch</h2>
+					<h2 class="title1 upper"><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></h2>
 					<span class="spacer20"></span>
 					
 					<form class="hm_contact_form" id="contact-us-form" name="contact-us-form" action="php/phpmailer/sendemail.php" method="post">
 						<div class="form_row clearfix">
 							<label for="contact-us-name">
-								<span class="hm_field_name">Name</span>
+								<span class="hm_field_name"><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></span>
 								<span class="hm_requires_star">*</span>
 							</label>
-							<input class="form_fill_fields hm_input_text" type="text" name="contact-us-name" id="contact-us-name" placeholder="Full Name" required>
+							<input class="form_fill_fields hm_input_text" type="text" name="contact-us-name" id="contact-us-name" placeholder="<?php $label=$label_homepage->next_row(); echo $label->label_id; ?>" required>
 						</div>
 						<div class="form_row clearfix">
 							<label for="contact-us-mail">
-								<span class="hm_field_name">Email</span>
+								<span class="hm_field_name"><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></span>
 								<span class="hm_requires_star">*</span>
 							</label>
-							<input class="form_fill_fields hm_input_text" type="email" name="contact-us-mail" id="contact-us-mail" placeholder="mail@sitename.com" required>
+							<input class="form_fill_fields hm_input_text" type="email" name="contact-us-mail" id="contact-us-mail" placeholder="<?php $label=$label_homepage->next_row(); echo $label->label_id; ?>" required>
 						</div>
 						<div class="form_row clearfix">
 							<label for="contact-us-subject">
-								<span class="hm_field_name">Subject</span>
+								<span class="hm_field_name"><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></span>
 							</label>
-							<input class="form_fill_fields hm_input_text" type="text" name="contact-us-subject" id="contact-us-subject">
+							<input class="form_fill_fields hm_input_text" type="text" name="contact-us-subject" id="contact-us-subject" placeholder="<?php $label=$label_homepage->next_row(); echo $label->label_id; ?>">
 						</div>
 						<div class="form_row clearfix">
 							<label for="contact-us-message">
-								<span class="hm_field_name">Message</span>
+								<span class="hm_field_name"><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></span>
 								<span class="hm_requires_star">*</span>
 							</label>
-							<textarea class="form_fill_fields hm_textarea" name="contact-us-message" id="contact-us-message" required></textarea>
+							<textarea class="form_fill_fields hm_textarea" name="contact-us-message" id="contact-us-message" placeholder="<?php $label=$label_homepage->next_row(); echo $label->label_id; ?>" required></textarea>
 						</div>
 						<div class="form_row clearfix">
 							<button type="submit" class="send_button full_button" name="contact-us-submit" id="contact-us-submit" value="submit">
 								<i class="ico-check3"></i>
-								<span>Send Your Message</span>
+								<span><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></span>
 							</button>
 						</div>
 						<div class="form_row clearfix">
@@ -1910,7 +1315,7 @@
 				</div><!-- Grid -->
 				
 				<div class="col-md-6">
-					<h2 class="title1 upper">Locate Us on Map</h2>
+					<h2 class="title1 upper"><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></h2>
 					<span class="spacer20"></span>
 					
 					<div class="bordered_content with_text bordered">
@@ -1919,22 +1324,22 @@
 					</div>
 					<span class="spacer10"></span>
 					
-                                        <h2 class="title1 upper">Contact Information</h2>
+                    <h2 class="title1 upper"><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></h2>
 					<span class="c_detail">
-						<span class="c_name">Address :</span>
-						<span class="c_desc">34 Depot Street Massapequa, NY 11758</span>
+						<span class="c_name"><?php echo $contact->name_id;?> :</span>
+						<span class="c_desc"><?php echo $contact->value;?></span>
 					</span>
 					<span class="c_detail">
-						<span class="c_name">Phone :</span>
-						<span class="c_desc">(305) 1234 5678 7891</span>
+						<span class="c_name"><?php $contact=$contact_homepage->next_row(); echo $contact->name_id;?> :</span>
+						<span class="c_desc"><?php echo $contact->value;?></span>
 					</span>
 					<span class="c_detail">
-						<span class="c_name">Email :</span>
-						<span class="c_desc">info@mail.com</span>
+						<span class="c_name"><?php $contact=$contact_homepage->next_row(); echo $contact->name_id;?> :</span>
+						<span class="c_desc"><?php echo $contact->value;?></span>
 					</span>
 					<span class="c_detail">
-						<span class="c_name">Site :</span>
-						<span class="c_desc">www.ideal-theme.com</span>
+						<span class="c_name"><?php $contact=$contact_homepage->next_row(); echo $contact->name_id;?> :</span>
+						<span class="c_desc"><?php echo $contact->value;?></span>
 					</span>
 
 				</div><!-- Grid -->
@@ -1948,7 +1353,7 @@
 		<div class="footer_copyright">
 			<div class="container clearfix">
 				<div class="col-md-6">
-					<span class="footer_copy_text">Copyright &copy; 2015 Powered By <a href="#">IdealTheme</a> - <a href="#">Enar Theme</a> - All Rights Reserved</span>
+					<span class="footer_copy_text">Copyright &copy; 2016 <a href="#">Aptikma Studio</a> -  All Rights Reserved</span>
 				</div>
 				<div class="col-md-6 clearfix">
 					<ul class="footer_menu clearfix">
