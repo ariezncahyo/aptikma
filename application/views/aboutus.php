@@ -10,12 +10,12 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<!-- Important stuff for SEO, don't neglect. (And don't dupicate values across your site!) -->
-	<?php $seo=$seo_homepage->row(); $label=$label_aboutus->row(); $ourgoal=$ourgoal_aboutus->row(); $whychoose=$whychoose_homepage->row(); $ourskill=$ourskill_aboutus->row(); $skillvalue=$skillvalue_aboutus->row(); ?>
-	<title><?php echo $label->label_id; ?></title>
+	<?php $seo=(array)$seo_homepage->row(); $label=(array)$label_aboutus->row(); $ourgoal=(array)$ourgoal_aboutus->row(); $whychoose=(array)$whychoose_homepage->row(); $ourskill=(array)$ourskill_aboutus->row(); $skillvalue=(array)$skillvalue_aboutus->row(); ?>
+	<title><?php echo $label["label_".WEB_LANG]; ?></title>
 	<meta name="author" content="Aptikma Studio" />
-	<meta name="description" content="<?php echo $seo->meta_desc_id; ?>" />
-	<meta name="keyword" content="<?php echo $seo->meta_keyword_id; ?>"/>
-	<meta name="tag" content="<?php echo $seo->meta_tag_id; ?>"/>
+	<meta name="description" content="<?php echo $seo["meta_desc_".WEB_LANG]; ?>" />
+	<meta name="keyword" content="<?php echo $seo["meta_keyword_".WEB_LANG]; ?>"/>
+	<meta name="tag" content="<?php echo $seo["meta_tag_".WEB_LANG]; ?>"/>
 	
 	<!-- Don't forget to set your site up: http://google.com/webmasters -->
 	<meta name="google-site-verification" content="" />
@@ -220,7 +220,7 @@
         <!-- Page Title -->
 	<section class="content_section white_section page_title has_bg_image bg_header1 enar_parallax">
 		<div class="content clearfix">
-			<h1 class=""><?php $label=$label_aboutus->next_row(); echo $label->label_id; ?></h1>
+			<h1 class=""><?php $label=(array)$label_aboutus->next_row(); echo $label["label_".WEB_LANG]; ?></h1>
 			<div class="breadcrumbs">
 				<a href="#">Home</a>
 				<span class="crumbs-spacer"><i class="ico-angle-right"></i></span>
@@ -234,15 +234,15 @@
 	<section class="content_section">
 		<div class="container icons_spacer">
 			<div class="main_title centered upper">
-				<h2><span class="line"><span class="dot"></span></span><?php $label=$label_aboutus->next_row(); echo $label->label_id; ?></h2>
+				<h2><span class="line"><span class="dot"></span></span><?php $label=(array)$label_aboutus->next_row(); echo $label["label_".WEB_LANG]; ?></h2>
 			</div>
 			<div class="icon_boxes_con style1 circle upper_title just_icon_border solid_icon clearfix">
 				<div class="col-md-4">
 					<div class="service_box">
 						<span class="icon"><i class="ico-tools-2"></i></span>
 						<div class="service_box_con centered">
-							<h3><?php echo $ourgoal->title_id; ?></h3>
-							<span class="desc"><?php echo $ourgoal->desc_id; ?></span>
+							<h3><?php echo $ourgoal["title_".WEB_LANG]; ?></h3>
+							<span class="desc"><?php echo $ourgoal["desc_".WEB_LANG]; ?></span>
 							<a href="#" class="ser-box-link"><span></span>Read More</a>
 						</div>
 					</div>
@@ -251,8 +251,8 @@
 					<div class="service_box">
 						<span class="icon"><i class="ico-mobile4"></i></span>
 						<div class="service_box_con centered">
-							<h3><?php $ourgoal=$ourgoal_aboutus->next_row(); echo $ourgoal->title_id; ?></h3>
-							<span class="desc"><?php echo $ourgoal->desc_id; ?></span>
+							<h3><?php $ourgoal=(array)$ourgoal_aboutus->next_row(); echo $ourgoal["title_".WEB_LANG]; ?></h3>
+							<span class="desc"><?php echo $ourgoal["desc_".WEB_LANG]; ?></span>
 							<a href="#" class="ser-box-link"><span></span>Read More</a>
 						</div>
 					</div>
@@ -261,8 +261,8 @@
 					<div class="service_box">
 						<span class="icon"><i class="ico-key4"></i></span>
 						<div class="service_box_con centered">
-							<h3><?php $ourgoal=$ourgoal_aboutus->next_row(); echo $ourgoal->title_id; ?></h3>
-						<span class="desc"><?php echo $ourgoal->desc_id; ?></span>
+							<h3><?php $ourgoal=(array)$ourgoal_aboutus->next_row(); echo $ourgoal["title_".WEB_LANG]; ?></h3>
+						<span class="desc"><?php echo $ourgoal["desc_".WEB_LANG]; ?></span>
 						<a href="#" class="ser-box-link"><span></span>Read More</a>
 						</div>
 					</div>
@@ -316,7 +316,7 @@
 				<!-- Tabs Container -->
 				<div class="col-md-6">
 					<div class="main_title upper small">
-						<h2><span class="line"><span class="dot"></span></span><?php $label=$label_aboutus->next_row(); echo $label->label_id; ?></h2>
+						<h2><span class="line"><span class="dot"></span></span><?php $label=(array)$label_aboutus->next_row(); echo $label["label_".WEB_LANG]; ?></h2>
 					</div>
 					<div class="hm-tabs tabs1">
 						<nav>
@@ -413,15 +413,15 @@
 				
 				<div class="col-md-6">
 					<div class="main_title upper small">
-						<h2><span class="line"><span class="dot"></span></span><?php $label=$label_aboutus->next_row(); echo $label->label_id; ?></h2>
+						<h2><span class="line"><span class="dot"></span></span><?php $label=(array)$label_aboutus->next_row(); echo $label["label_".WEB_LANG]; ?></h2>
 					</div>
 					<!-- My Accordion -->
 					<div class="enar_accordion plus_minus" data-type="accordion"> <!-- accordion - toggle -->
 						<div class="enar_occ_container" data-expanded="true">
-							<span class="enar_occ_title"><i class="ico-head"></i><?php echo $whychoose->title_id; ?></span>
+							<span class="enar_occ_title"><i class="ico-head"></i><?php echo $whychoose["title_".WEB_LANG]; ?></span>
 							<div class="enar_occ_content">
 								<div class="acc_content">
-									<p><?php echo $whychoose->desc_id; ?></p>
+									<p><?php echo $whychoose["desc_".WEB_LANG]; ?></p>
 								<!--<p>Lorem Ipsum is simply dummy text of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known.</p>
 	<p>Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet odio vulputate eleifend in in tortor standar dummyy text ever since the when an iunesi known.</p>
 	<p>Lorem Ipsum is simply dummy text of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known.</p>-->
@@ -429,10 +429,10 @@
 							</div>
 						</div>
 						<div class="enar_occ_container" data-expanded="false">
-							<span class="enar_occ_title"><i class="ico-heart3"></i><?php $whychoose=$whychoose_homepage->next_row(); echo $whychoose->title_id; ?></span>
+							<span class="enar_occ_title"><i class="ico-heart3"></i><?php $whychoose=(array)$whychoose_homepage->next_row(); echo $whychoose["title_".WEB_LANG]; ?></span>
 							<div class="enar_occ_content">
 								<div class="acc_content">
-									<p><?php echo $whychoose->desc_id; ?></p>
+									<p><?php echo $whychoose["desc_".WEB_LANG]; ?></p>
 								<!--<p>Lorem Ipsum is simply dummy text of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known.</p>
 	<p>Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet odio vulputate eleifend in in tortor standar dummyy text ever since the when an iunesi known.</p>
 	<p>Lorem Ipsum is simply dummy text of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known.</p>-->
@@ -440,10 +440,10 @@
 							</div>
 						</div>
 						<div class="enar_occ_container" data-expanded="false">
-							<span class="enar_occ_title"><i class="ico-check3"></i><?php $whychoose=$whychoose_homepage->next_row(); echo $whychoose->title_id; ?></span>
+							<span class="enar_occ_title"><i class="ico-check3"></i><?php $whychoose=(array)$whychoose_homepage->next_row(); echo $whychoose["title_".WEB_LANG]; ?></span>
 							<div class="enar_occ_content">
 								<div class="acc_content">
-									<p><?php echo $whychoose->desc_id; ?></p>
+									<p><?php echo $whychoose["desc_".WEB_LANG]; ?></p>
 								<!--<p>Lorem Ipsum is simply dummy text of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known.</p>
 	<p>Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet odio vulputate eleifend in in tortor standar dummyy text ever since the when an iunesi known.</p>
 	<p>Lorem Ipsum is simply dummy text of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known.</p>-->
@@ -451,10 +451,10 @@
 							</div>
 						</div>
 						<div class="enar_occ_container" data-expanded="false">
-							<span class="enar_occ_title"><i class="ico-head"></i><?php $whychoose=$whychoose_homepage->next_row(); echo $whychoose->title_id; ?></span>
+							<span class="enar_occ_title"><i class="ico-head"></i><?php $whychoose=(array)$whychoose_homepage->next_row(); echo $whychoose["title_".WEB_LANG]; ?></span>
 							<div class="enar_occ_content">
 								<div class="acc_content">
-									<p><?php echo $whychoose->desc_id; ?></p>
+									<p><?php echo $whychoose["desc_".WEB_LANG]; ?></p>
 								<!--<p>Lorem Ipsum is simply dummy text of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known.</p>
 	<p>Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet odio vulputate eleifend in in tortor standar dummyy text ever since the when an iunesi known.</p>
 	<p>Lorem Ipsum is simply dummy text of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known.</p>-->
@@ -462,10 +462,10 @@
 							</div>
 						</div>
 						<div class="enar_occ_container" data-expanded="false">
-							<span class="enar_occ_title"><i class="ico-heart3"></i><?php $whychoose=$whychoose_homepage->next_row(); echo $whychoose->title_id; ?></span>
+							<span class="enar_occ_title"><i class="ico-heart3"></i><?php $whychoose=(array)$whychoose_homepage->next_row(); echo $whychoose["title_".WEB_LANG]; ?></span>
 							<div class="enar_occ_content">
 								<div class="acc_content">
-									<p><?php echo $whychoose->desc_id; ?></p>
+									<p><?php echo $whychoose["desc_".WEB_LANG]; ?></p>
 								<!--<p>Lorem Ipsum is simply dummy text of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known.</p>
 	<p>Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet odio vulputate eleifend in in tortor standar dummyy text ever since the when an iunesi known.</p>
 	<p>Lorem Ipsum is simply dummy text of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known.</p>-->
@@ -473,10 +473,10 @@
 							</div>
 						</div>
 						<div class="enar_occ_container" data-expanded="false">
-							<span class="enar_occ_title"><i class="ico-check3"></i><?php $whychoose=$whychoose_homepage->next_row(); echo $whychoose->title_id; ?></span>
+							<span class="enar_occ_title"><i class="ico-check3"></i><?php $whychoose=(array)$whychoose_homepage->next_row(); echo $whychoose["title_".WEB_LANG]; ?></span>
 							<div class="enar_occ_content">
 								<div class="acc_content">
-									<p><?php echo $whychoose->desc_id; ?></p>
+									<p><?php echo $whychoose["desc_".WEB_LANG]; ?></p>
 								<!--<p>Lorem Ipsum is simply dummy text of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known.</p>
 	<p>Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet odio vulputate eleifend in in tortor standar dummyy text ever since the when an iunesi known.</p>
 	<p>Lorem Ipsum is simply dummy text of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known.</p>-->
@@ -498,13 +498,13 @@
 		<span class="section_icon"><i class="ico-strategy"></i></span>
 		<div class="content row_spacer no_padding">	
 			<div class="main_title centered upper">
-			    <h2><span class="line"></span><?php $label=$label_aboutus->next_row(); echo $label->label_id; ?></h2>
+			    <h2><span class="line"></span><?php $label=(array)$label_aboutus->next_row(); echo $label["label_".WEB_LANG]; ?></h2>
 			</div>
 			
 			<div class="rows_container clearfix">
 				<div class="col-md-6">
-					<h2 class="title1 upper"><?php echo $ourskill->title_id; ?></h2>
-					<p><?php echo $ourskill->desc_id; ?></p>
+					<h2 class="title1 upper"><?php echo $ourskill["title_".WEB_LANG]; ?></h2>
+					<p><?php echo $ourskill["desc_".WEB_LANG]; ?></p>
 					<!--<p>Lorem Ipsum is simply dummy text of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known printer of took a galley of type.</p>
 					<p>and scrambled it to make a typea specimen book There are many variations of the paes sages the Lorem Ipsum available, but the majority have to suffered alteration iner some form with injected randomised words which.</p>-->
 					<ul class="list1 black list_circle clearfix">
@@ -523,8 +523,8 @@
 				
 				<div class="col-md-6">
 					<div class="prog_bar2_con">
-						<span class="title"><i class="ico-laptop2"></i><span class="prog_bar2_title"><?php echo $skillvalue->title_id; ?></span></span>
-						<div class="progress_bar prog_bar2" data-progress-val="<?php echo $skillvalue->value; ?>" data-progress-animation="easeOutQuad" data-progress-delay="300" data-progress-color="#0BACB8">
+						<span class="title"><i class="ico-laptop2"></i><span class="prog_bar2_title"><?php echo $skillvalue["title_".WEB_LANG]; ?></span></span>
+						<div class="progress_bar prog_bar2" data-progress-val="<?php echo $skillvalue["value"]; ?>" data-progress-animation="easeOutQuad" data-progress-delay="300" data-progress-color="#0BACB8">
 							<div class="fill_con2">
 								<div class="fill">
 									<span class="value"><span class="num"></span><span>%</span></span>
@@ -537,8 +537,8 @@
 					</div>
 					
 					<div class="prog_bar2_con">
-						<span class="title"><i class="ico-code2"></i><span class="prog_bar2_title"><?php $skillvalue=$skillvalue_aboutus->next_row(); echo $skillvalue->title_id; ?></span></span>
-						<div class="progress_bar prog_bar2" data-progress-val="<?php echo $skillvalue->value; ?>" data-progress-animation="easeOutQuad" data-progress-delay="600" data-progress-color="#B97FDB">
+						<span class="title"><i class="ico-code2"></i><span class="prog_bar2_title"><?php $skillvalue=(array)$skillvalue_aboutus->next_row(); echo $skillvalue["title_".WEB_LANG]; ?></span></span>
+						<div class="progress_bar prog_bar2" data-progress-val="<?php echo $skillvalue["value"]; ?>" data-progress-animation="easeOutQuad" data-progress-delay="600" data-progress-color="#B97FDB">
 							<div class="fill_con2">
 								<div class="fill">
 									<span class="value"><span class="num"></span><span>%</span></span>
@@ -551,8 +551,8 @@
 					</div>
 					
 					<div class="prog_bar2_con">
-						<span class="title"><i class="ico-heart2"></i><span class="prog_bar2_title"><?php $skillvalue=$skillvalue_aboutus->next_row(); echo $skillvalue->title_id; ?></span></span>
-						<div class="progress_bar prog_bar2" data-progress-val="<?php echo $skillvalue->value; ?>" data-progress-animation="easeOutQuad" data-progress-delay="900" data-progress-color="">
+						<span class="title"><i class="ico-heart2"></i><span class="prog_bar2_title"><?php $skillvalue=(array)$skillvalue_aboutus->next_row(); echo $skillvalue["title_".WEB_LANG]; ?></span></span>
+						<div class="progress_bar prog_bar2" data-progress-val="<?php echo $skillvalue["value"]; ?>" data-progress-animation="easeOutQuad" data-progress-delay="900" data-progress-color="">
 							<div class="fill_con2">
 								<div class="fill">
 									<span class="value"><span class="num"></span><span>%</span></span>
@@ -565,8 +565,8 @@
 					</div>
 					
 					<div class="prog_bar2_con">
-						<span class="title"><i class="ico-search42"></i><span class="prog_bar2_title"><?php $skillvalue=$skillvalue_aboutus->next_row(); echo $skillvalue->title_id; ?></span></span>
-						<div class="progress_bar prog_bar2" data-progress-val="<?php echo $skillvalue->value; ?>" data-progress-animation="easeOutQuad" data-progress-delay="1200" data-progress-color="#00BC90">
+						<span class="title"><i class="ico-search42"></i><span class="prog_bar2_title"><?php $skillvalue=(array)$skillvalue_aboutus->next_row(); echo $skillvalue["title_".WEB_LANG]; ?></span></span>
+						<div class="progress_bar prog_bar2" data-progress-val="<?php echo $skillvalue["value"]; ?>" data-progress-animation="easeOutQuad" data-progress-delay="1200" data-progress-color="#00BC90">
 							<div class="fill_con2">
 								<div class="fill">
 									<span class="value"><span class="num"></span><span>%</span></span>
@@ -579,8 +579,8 @@
 					</div>
 					
 					<div class="prog_bar2_con">
-						<span class="title"><i class="ico-key32"></i><span class="prog_bar2_title"><?php $skillvalue=$skillvalue_aboutus->next_row(); echo $skillvalue->title_id; ?></span></span>
-						<div class="progress_bar prog_bar2" data-progress-val="<?php echo $skillvalue->value; ?>" data-progress-animation="easeOutQuad" data-progress-delay="1500" data-progress-color="#FF513E">
+						<span class="title"><i class="ico-key32"></i><span class="prog_bar2_title"><?php $skillvalue=(array)$skillvalue_aboutus->next_row(); echo $skillvalue["title_".WEB_LANG]; ?></span></span>
+						<div class="progress_bar prog_bar2" data-progress-val="<?php echo $skillvalue["value"]; ?>" data-progress-animation="easeOutQuad" data-progress-delay="1500" data-progress-color="#FF513E">
 							<div class="fill_con2">
 								<div class="fill">
 									<span class="value"><span class="num"></span><span>%</span></span>
@@ -602,7 +602,7 @@
 		<div class="container row_spacer clearfix">
 			<div class="content">
 				<div class="main_title centered upper">
-					<h2><span class="line"><span class="dot"></span></span><?php $label=$label_aboutus->next_row(); echo $label->label_id; ?></h2>
+					<h2><span class="line"><span class="dot"></span></span><?php $label=(array)$label_aboutus->next_row(); echo $label["label_".WEB_LANG]; ?></h2>
 				</div>
 			</div>
 			<!-- Rows Container -->

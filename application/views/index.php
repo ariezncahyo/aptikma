@@ -10,7 +10,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<!-- Important stuff for SEO, don't neglect. (And don't dupicate values across your site!) -->
-	<?php $seo=(array)$seo_homepage->row(); $label=(array)$label_homepage->row(); $services=(array)$services_homepage->row(); $contact=(array)$contact_homepage->row(); $whychoose=(array)$whychoose_homepage(->row();  ?>
+	<?php $seo=(array)$seo_homepage->row(); $label=(array)$label_homepage->row(); $services=(array)$services_homepage->row(); $contact=(array)$contact_homepage->row(); $whychoose=(array)$whychoose_homepage->row();  ?>
 	<meta name="author" content="Aptikma Studio" />
 	<meta name="description" content="<?php echo $seo['meta_desc_'.WEB_LANG]; ?>" />
 	<meta name="keyword" content="<?php echo $seo['meta_keyword_'.WEB_LANG]; ?>"/>
@@ -441,7 +441,7 @@
 				<div class="service_box">
 					<span class="icon circle"><img src="<?php echo base_url(); ?>assets/images/icons/weather.png" alt="Unique Design"></span>
 					<div class="service_box_con">
-						<h3><?php $services=(array)$services_homepage->next_row(); echo $services('title_'.WEB_LANG); ?></h3>
+						<h3><?php $services=(array)$services_homepage->next_row(); echo $services['title_'.WEB_LANG]; ?></h3>
 						<span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>
 						<a href="#" class="ser-box-link"><span></span>Read More</a>
 					</div>
@@ -666,7 +666,7 @@
 	    
 		    <div class="content">
 			<div class="main_title centered upper">
-			    <h2><span class="line"><i class="ico-wallet-travel"></i></span><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></h2>
+			    <h2><span class="line"><i class="ico-wallet-travel"></i></span><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></h2>
 			</div>
 		    </div>
 		
@@ -896,7 +896,7 @@
 	<section class="content_section bg_gray">
 		<div class="content row_spacer no_padding">	
 			<div class="main_title centered upper">
-				<h2><span class="line"><i class="ico-pencil2"></i></span><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></h2>
+				<h2><span class="line"><i class="ico-pencil2"></i></span><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></h2>
 			</div>
 			
 			<!-- Filter Content -->
@@ -1264,39 +1264,39 @@
 	<section class="content_section">
 		<div class="title_banner t_b_color3 upper centered">
 			<div class="content">
-				<h2><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></h2>
+				<h2><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></h2>
 			</div>
 		</div>
 		<div class="content row_spacer no_padding">	
 			<div class="rows_container clearfix">
 				<div class="col-md-6">
-					<h2 class="title1 upper"><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></h2>
+					<h2 class="title1 upper"><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></h2>
 					<span class="spacer20"></span>
 					
 					<form class="hm_contact_form" id="contact-us-form" name="contact-us-form" action="php/phpmailer/sendemail.php" method="post">
 						<div class="form_row clearfix">
 							<label for="contact-us-name">
-								<span class="hm_field_name"><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></span>
+								<span class="hm_field_name"><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></span>
 								<span class="hm_requires_star">*</span>
 							</label>
 							<input class="form_fill_fields hm_input_text" type="text" name="contact-us-name" id="contact-us-name" placeholder="<?php $label=$label_homepage->next_row(); echo $label->label_id; ?>" required>
 						</div>
 						<div class="form_row clearfix">
 							<label for="contact-us-mail">
-								<span class="hm_field_name"><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></span>
+								<span class="hm_field_name"><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></span>
 								<span class="hm_requires_star">*</span>
 							</label>
 							<input class="form_fill_fields hm_input_text" type="email" name="contact-us-mail" id="contact-us-mail" placeholder="<?php $label=$label_homepage->next_row(); echo $label->label_id; ?>" required>
 						</div>
 						<div class="form_row clearfix">
 							<label for="contact-us-subject">
-								<span class="hm_field_name"><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></span>
+								<span class="hm_field_name"><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></span>
 							</label>
 							<input class="form_fill_fields hm_input_text" type="text" name="contact-us-subject" id="contact-us-subject" placeholder="<?php $label=$label_homepage->next_row(); echo $label->label_id; ?>">
 						</div>
 						<div class="form_row clearfix">
 							<label for="contact-us-message">
-								<span class="hm_field_name"><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></span>
+								<span class="hm_field_name"><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></span>
 								<span class="hm_requires_star">*</span>
 							</label>
 							<textarea class="form_fill_fields hm_textarea" name="contact-us-message" id="contact-us-message" placeholder="<?php $label=$label_homepage->next_row(); echo $label->label_id; ?>" required></textarea>
@@ -1304,7 +1304,7 @@
 						<div class="form_row clearfix">
 							<button type="submit" class="send_button full_button" name="contact-us-submit" id="contact-us-submit" value="submit">
 								<i class="ico-check3"></i>
-								<span><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></span>
+								<span><?php $label=(arraY)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></span>
 							</button>
 						</div>
 						<div class="form_row clearfix">
@@ -1315,7 +1315,7 @@
 				</div><!-- Grid -->
 				
 				<div class="col-md-6">
-					<h2 class="title1 upper"><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></h2>
+					<h2 class="title1 upper"><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></h2>
 					<span class="spacer20"></span>
 					
 					<div class="bordered_content with_text bordered">
@@ -1324,22 +1324,22 @@
 					</div>
 					<span class="spacer10"></span>
 					
-                    <h2 class="title1 upper"><?php $label=$label_homepage->next_row(); echo $label->label_id; ?></h2>
+                    <h2 class="title1 upper"><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></h2>
 					<span class="c_detail">
-						<span class="c_name"><?php echo $contact->name_id;?> :</span>
-						<span class="c_desc"><?php echo $contact->value;?></span>
+						<span class="c_name"><?php echo $contact["name_".WEB_LANG];?> :</span>
+						<span class="c_desc"><?php echo $contact["value"];?></span>
 					</span>
 					<span class="c_detail">
-						<span class="c_name"><?php $contact=$contact_homepage->next_row(); echo $contact->name_id;?> :</span>
-						<span class="c_desc"><?php echo $contact->value;?></span>
+						<span class="c_name"><?php $contact=(array)$contact_homepage->next_row(); echo $contact["name_".WEB_LANG];?> :</span>
+						<span class="c_desc"><?php echo $contact["value"];?></span>
 					</span>
 					<span class="c_detail">
-						<span class="c_name"><?php $contact=$contact_homepage->next_row(); echo $contact->name_id;?> :</span>
-						<span class="c_desc"><?php echo $contact->value;?></span>
+						<span class="c_name"><?php $contact=(array)$contact_homepage->next_row(); echo $contact["name_".WEB_LANG];?> :</span>
+						<span class="c_desc"><?php echo $contact["value"];?></span>
 					</span>
 					<span class="c_detail">
-						<span class="c_name"><?php $contact=$contact_homepage->next_row(); echo $contact->name_id;?> :</span>
-						<span class="c_desc"><?php echo $contact->value;?></span>
+						<span class="c_name"><?php $contact=(array)$contact_homepage->next_row(); echo $contact["name_".WEB_LANG];?> :</span>
+						<span class="c_desc"><?php echo $contact["value"];?></span>
 					</span>
 
 				</div><!-- Grid -->
