@@ -10,7 +10,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<!-- Important stuff for SEO, don't neglect. (And don't dupicate values across your site!) -->
-	<?php $seo=(array)$seo_homepage->row(); $label=(array)$label_services->row(); $ourgoal=(array)$ourgoal_aboutus->row(); $whychoose=(array)$whychoose_homepage->row(); $ourskill=(array)$ourskill_aboutus->row(); $skillvalue=(array)$skillvalue_aboutus->row(); ?>
+	<?php $seo=(array)$seo_homepage->row(); $label=(array)$label_services->row(); $summary=(array)$summary_services->row(); $services=(array)$services_services->row(); $features=(array)$features_services->row(); $other=(array)$other_services->row(); ?>
 	<title><?php echo $label["label_".WEB_LANG]; ?></title>
 	<meta name="author" content="Aptikma Studio" />
 	<meta name="description" content="<?php echo $seo["meta_desc_".WEB_LANG]; ?>" />
@@ -193,7 +193,7 @@
 							    <a href="<?php echo base_url(); ?>aptikma/services"><span>Layanan</span></a>
 							</li>
 							<li class="has_tab_menu mobile_menu_toggle">
-								<a href="#"><span>Portfolio</span></a>
+								<a href="<?php echo base_url(); ?>aptikma/portfolio"><span>Portfolio</span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
 								<a href="#"><span>Kontak</span></a>
@@ -235,7 +235,7 @@
 				
 				<div class="col-md-8">
 					<h2 class="title1 upper"><?php $label=(array)$label_services->next_row(); echo $label["label_".WEB_LANG]; ?></h2>
-					<p><?php $label=(array)$label_services->next_row(); echo $label["label_".WEB_LANG]; ?></p>
+					<p><?php echo $summary["desc_".WEB_LANG]; ?></p>
 					<!--<p><b>Lorem Ipsum is simply dummy text</b> of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known printer of took a galley of type and scrambled it to make a typea specimen book There are many variations of the paes sages the Lorem Ipsum.</p>
 					<p>There are many variations of demo text passed sages of Lorem Ipsum available but the majority Lorem Ipsum is simply dummy text of the printing and typeseting industry Lorem in text Ipsum has been the industry standar dummyy text ever since the when an iunesi known.</p>-->
 				</div>
@@ -287,8 +287,8 @@
 					<div class="service_box clearfix">
 					<span class="icon circle"><i class="ico-reload"></i></span>
 					<div class="service_box_con">
-						<h3>Super Coding</h3>
-					    <span class="desc">There are many variations of demo text passed sages of Lorem Ipsum available but the majority.</span>
+						<h3><?php echo $services["title_".WEB_LANG]; ?></h3>
+					    <span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>
 					    <a href="#" class="ser-box-link"><span></span>Read More</a>
 					</div>
 				    </div>
@@ -297,8 +297,8 @@
 					<div class="service_box clearfix">
 					<span class="icon circle"><i class="ico-share4"></i></span>
 					<div class="service_box_con">
-						<h3>Best User Interface</h3>
-					    <span class="desc">There are many variations of demo text passed sages of Lorem Ipsum available but the majority.</span>
+						<h3><?php $services=(array)$services_services->next_row(); echo $services["title_".WEB_LANG]; ?></h3>
+					    <span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>
 					    <a href="#" class="ser-box-link"><span></span>Read More</a>
 					</div>
 				    </div>
@@ -307,8 +307,8 @@
 					<div class="service_box clearfix">
 					<span class="icon circle"><i class="ico-esc"></i></span>
 					<div class="service_box_con">
-						<h3>Unique Design</h3>
-					    <span class="desc">There are many variations of demo text passed sages of Lorem Ipsum available but the majority.</span>
+						<h3><?php $services=(array)$services_services->next_row(); echo $services["title_".WEB_LANG]; ?></h3>
+					    <span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>
 					    <a href="#" class="ser-box-link"><span></span>Read More</a>
 					</div>
 				    </div>
@@ -317,8 +317,8 @@
 					<div class="service_box clearfix">
 					<span class="icon circle"><i class="ico-toggle"></i></span>
 					<div class="service_box_con">
-						<h3>1111 Free Font Icons</h3>
-					    <span class="desc">There are many variations of demo text passed sages of Lorem Ipsum available but the majority.</span>
+						<h3><?php $services=(array)$services_services->next_row(); echo $services["title_".WEB_LANG]; ?></h3>
+					    <span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>
 					    <a href="#" class="ser-box-link"><span></span>Read More</a>
 					</div>
 				    </div>
@@ -327,8 +327,8 @@
 					<div class="service_box clearfix">
 					<span class="icon circle"><i class="ico-bell3"></i></span>
 					<div class="service_box_con">
-						<h3>Awesome Mega menu</h3>
-					    <span class="desc">There are many variations of demo text passed sages of Lorem Ipsum available but the majority.</span>
+						<h3><?php $services=(array)$services_services->next_row(); echo $services["title_".WEB_LANG]; ?></h3>
+					    <span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>
 					    <a href="#" class="ser-box-link"><span></span>Read More</a>
 					</div>
 				    </div>
@@ -337,8 +337,8 @@
 					<div class="service_box clearfix">
 					<span class="icon circle"><i class="ico-pie-graph"></i></span>
 					<div class="service_box_con">
-						<h3>Retina Ready</h3>
-					    <span class="desc">There are many variations of demo text passed sages of Lorem Ipsum available but the majority.</span>
+						<h3><?php $services=(array)$services_services->next_row(); echo $services["title_".WEB_LANG]; ?></h3>
+					    <span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>
 					    <a href="#" class="ser-box-link"><span></span>Read More</a>
 					</div>
 				    </div>
@@ -366,24 +366,27 @@
 					<div class="feature_icon on_right">
 					    <div class="item">
 						<h5>
-						    <span class="icon"><span><i class="ico-rocket3"></i></span></span>
-						    <span class="title">Easy to customize</span>
+						    <!--<span class="icon"><span><i class="ico-rocket3"></i></span></span>-->
+						    <span class="title"><?php echo $features["title_".WEB_LANG."_1"]; ?></span>
 						</h5>
-						<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>
+						<span><br><br></span>
+						<!--<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>-->
 					    </div>
 					    <div class="item">
 						<h5>
-						    <span class="icon"><span><i class="ico-laptop-windows"></i></span></span>
-						    <span class="title">Responsive Design</span>
+						    <!--<span class="icon"><span><i class="ico-laptop-windows"></i></span></span>-->
+						    <span class="title"><?php echo $features["title_".WEB_LANG."_2"]; ?></span>
 						</h5>
-						<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>
+						<span><br><br></span>
+						<!--<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>-->
 					    </div>
 					    <div class="item">
 						<h5>
-						    <span class="icon"><span><i class="ico-send-o"></i></span></span>
-						    <span class="title">Awesome Shortcodes</span>
+						    <!--<span class="icon"><span><i class="ico-send-o"></i></span></span>-->
+						    <span class="title"><?php echo $features["title_".WEB_LANG."_3"]; ?></span>
 						</h5>
-						<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>
+						<span><br><br></span>
+						<!--<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>-->
 					    </div>
 					</div>
 				    </div>
@@ -405,24 +408,27 @@
 					<div class="feature_icon">
 					    <div class="item">
                                     <h5>
-                                        <span class="icon"><span><i class="ico-heart4"></i></span></span>
-                                        <span class="title">Endless Possibilities</span>
+                                        <!--<span class="icon"><span><i class="ico-heart4"></i></span></span>-->
+                                        <span class="title"><?php echo $features["title_".WEB_LANG."_4"]; ?></span>
                                     </h5>
-                                    <span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>
+                                    <span><br><br></span>
+                                    <!--<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>-->
                                 </div>
                                 <div class="item">
                                     <h5>
-                                        <span class="icon"><span><i class="ico-home5"></i></span></span>
-                                        <span class="title">Boxed & Wide</span>
+                                        <!--<span class="icon"><span><i class="ico-home5"></i></span></span>-->
+                                        <span class="title"><?php echo $features["title_".WEB_LANG."_5"]; ?></span>
                                     </h5>
-                                    <span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>
+                                    <span><br><br></span>
+                                    <!--<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>-->
                                 </div>
                                 <div class="item">
                                     <h5>
-                                        <span class="icon"><span><i class="ico-play6"></i></span></span>
-                                        <span class="title">HTML5 Video</span>
+                                        <!--<span class="icon"><span><i class="ico-play6"></i></span></span>-->
+                                        <span class="title"><?php echo $features["title_".WEB_LANG."_6"]; ?></span>
                                     </h5>
-                                    <span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>
+                                    <span><br><br></span>
+                                    <!--<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>-->
                                 </div>
 					</div>
 				    </div>
@@ -435,24 +441,27 @@
                             <div class="feature_icon on_right">
                                 <div class="item">
                                     <h5>
-                                        <span class="icon"><span><i class="ico-dashboard2"></i></span></span>
-                                        <span class="title">Diffrent Themes</span>
+                                        <!--<span class="icon"><span><i class="ico-dashboard2"></i></span></span>-->
+                                        <span class="title"><?php $features=(array)$features_services->next_row(); echo $features["title_".WEB_LANG."_1"]; ?></span>
                                     </h5>
-                                    <span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>
+                                    <span><br><br></span>
+                                    <!--<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>-->
                                 </div>
                                 <div class="item">
                                     <h5>
-                                        <span class="icon"><span><i class="ico-browser"></i></span></span>
-                                        <span class="title">Modern Design</span>
+                                        <!--<span class="icon"><span><i class="ico-browser"></i></span></span>-->
+                                        <span class="title"><?php echo $features["title_".WEB_LANG."_2"]; ?></span>
                                     </h5>
-                                    <span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>
+                                    <span><br><br></span>
+                                    <!--<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>-->
                                 </div>
                                 <div class="item">
                                     <h5>
-                                        <span class="icon"><span><i class="ico-write"></i></span></span>
-                                        <span class="title">Easy to Use</span>
+                                        <!--<span class="icon"><span><i class="ico-write"></i></span></span>-->
+                                        <span class="title"><?php echo $features["title_".WEB_LANG."_3"]; ?></span>
                                     </h5>
-                                    <span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>
+                                    <span><br><br></span>
+                                    <!--<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>-->
                                 </div>
                             </div>
                         </div>
@@ -474,24 +483,27 @@
                             <div class="feature_icon">
                                 <div class="item">
                                     <h5>
-                                        <span class="icon"><span><i class="ico-monitor2"></i></span></span>
-                                        <span class="title">New Layout</span>
+                                        <!--<span class="icon"><span><i class="ico-monitor2"></i></span></span>-->
+                                        <span class="title"><?php echo $features["title_".WEB_LANG."_4"]; ?></span>
                                     </h5>
-                                    <span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>
+                                    <span><br><br></span>
+                                    <!--<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>-->
                                 </div>
                                 <div class="item">
                                     <h5>
-                                        <span class="icon"><span><i class="ico-cart2"></i></span></span>
-                                        <span class="title">Pricing Tables</span>
+                                        <!--<span class="icon"><span><i class="ico-cart2"></i></span></span>-->
+                                        <span class="title"><?php echo $features["title_".WEB_LANG."_5"]; ?></span>
                                     </h5>
-                                    <span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>
+                                    <span><br><br></span>
+                                    <!--<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>-->
                                 </div>
                                 <div class="item">
                                     <h5>
-                                        <span class="icon"><span><i class="ico-chart"></i></span></span>
-                                        <span class="title">New Sections</span>
+                                        <!--<span class="icon"><span><i class="ico-chart"></i></span></span>-->
+                                        <span class="title"><?php echo $features["title_".WEB_LANG."_6"]; ?></span>
                                     </h5>
-                                    <span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>
+                                    <span><br><br></span>
+                                    <!--<span>There are many variations of passages of Lorem Text on Ipsum available but the majority.</span>-->
                                 </div>
                             </div>
                         </div>
@@ -515,16 +527,16 @@
 		<div class="hm-tabs tabs2 upper_title">
 		    <nav class="clearfix">
 			<ul class="tabs-navi">
-			    <li><a data-content="vission" class="selected" href="#"><span><i class="ico-heart-o"></i></span>Vission</a></li>
-			    <li><a data-content="solutions" href="#"><span><i class="ico-anchor2"></i></span>Solutions</a></li>
-			    <li><a data-content="gallery" href="#"><span><i class="ico-microphone2"></i></span>Gallery</a></li>
+			    <li><a data-content="<?php echo $other["title_".WEB_LANG]; ?>" class="selected" href="#"><span><i class="ico-heart-o"></i></span><?php echo $other["title_".WEB_LANG]; ?></a></li>
+			    <li><a data-content="<?php $other=(array)$other_services->next_row(); echo $other["title_".WEB_LANG]; ?>" href="#"><span><i class="ico-anchor2"></i></span><?php echo $other["title_".WEB_LANG]; ?></a></li>
+			    <!--<li><a data-content="gallery" href="#"><span><i class="ico-microphone2"></i></span>Gallery</a></li>
 			    <li><a data-content="technology" href="#"><span><i class="ico-sun4"></i></span>Technology</a></li>
-			    <li><a data-content="settings" href="#"><span><i class="ico-location3"></i></span>Settings</a></li>
+			    <li><a data-content="settings" href="#"><span><i class="ico-location3"></i></span>Settings</a></li>-->
 			</ul> <!-- tabs-navi -->
 		    </nav>
 		
 		    <ul class="tabs-body">
-			<li data-content="vission" class="selected clearfix">
+			<li data-content="<?php $other=(array)$other_services->row(); echo $other["title_".WEB_LANG]; ?>" class="selected clearfix">
 			    
 			    <div class="tab_img">
 				    <a class="magnific-popup img_popup" href="<?php echo base_url(); ?>assets/images/home2.jpg">
@@ -532,19 +544,21 @@
 				    <img class="popup_img" src="<?php echo base_url(); ?>assets/images/home2.jpg" alt="vission">
 				</a>
 			    </div>
-			    <h6>Why Choose Us ?</h6>
-			    <p>Inbox Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae rem animi accusamus quisquam reprehenderit sed voluptates, numquam, quibusdam velit dolores repellendus tempora corrupti accusantium obcaecati voluptate totam eveniet laboriosam?</p>
-		
-			    <p>Inbox Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum recusandae rem animi accusamus quisquam reprehenderit sed voluptates, numquam, quibusdam velit dolores repellendus tempora corrupti accusantium obcaecati voluptate totam eveniet laboriosam?</p>
+			    <p><?php echo $other["desc_".WEB_LANG]; ?></p>
 			</li>
 		
-			<li data-content="solutions">
-			    <p>New Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non a voluptatibus, ex odit totam cumque nihil eos asperiores ea, labore rerum. Doloribus tenetur quae impedit adipisci, laborum dolorum eaque ratione quaerat, eos dicta consequuntur atque ex facere voluptate cupiditate incidunt.</p>
-		
-			    <p>New Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non a voluptatibus, ex odit totam cumque nihil eos asperiores ea, labore rerum. Doloribus tenetur quae impedit adipisci, laborum dolorum eaque ratione quaerat, eos dicta consequuntur atque ex facere voluptate cupiditate incidunt.</p>
+			<li data-content="<?php $other=(array)$other_services->next_row(); echo $other["title_".WEB_LANG]; ?>" class="clearfix">
+			    
+			    <div class="tab_img">
+				    <a class="magnific-popup img_popup" href="<?php echo base_url(); ?>assets/images/home2.jpg">
+				    <span><i class="ico-maximize"></i></span>
+				    <img class="popup_img" src="<?php echo base_url(); ?>assets/images/home2.jpg" alt="vission">
+				</a>
+			    </div>
+			    <p><?php echo $other["desc_".WEB_LANG]; ?></p>
 			</li>
 		
-			<li data-content="gallery">
+			<!--<li data-content="gallery">
 			    <p>Gallery Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque tenetur aut, cupiditate, libero eius rerum incidunt dolorem quo in officia.</p>
 		
 			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsa vero, culpa doloremque voluptatum consectetur mollitia, atque expedita unde excepturi id, molestias maiores delectus quos molestiae. Ab iure provident adipisci eveniet quisquam ratione libero nam inventore error pariatur optio facilis assumenda sint atque cumque, omnis perspiciatis. Maxime minus quam voluptatum provident aliquam voluptatibus vel rerum. Soluta nulla tempora aspernatur maiores! Animi accusamus officiis neque exercitationem dolore ipsum maiores delectus asperiores reprehenderit pariatur placeat, quaerat sed illum optio qui enim odio temporibus, nulla nihil nemo quod dicta consectetur obcaecati vel. Perspiciatis animi corrupti quidem fugit deleniti, atque mollitia labore excepturi ut.</p>
@@ -560,7 +574,7 @@
 			    <p>Settings Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam nam magni, ullam nihil a suscipit, ex blanditiis, adipisci tempore deserunt maiores. Nostrum officia, ratione enim eaque nihil quis ea, officiis iusto repellendus. Animi illo in hic, maxime deserunt unde atque a nesciunt? Non odio quidem deserunt animi quod impedit nam, voluptates eum, voluptate consequuntur sit vel, et exercitationem sint atque dolores libero dolorem accusamus ratione iste tenetur possimus excepturi. Accusamus vero, dignissimos beatae tempore mollitia officia voluptate quam animi vitae.</p>
 		
 			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique ipsam eum reprehenderit minima at sapiente ad ipsum animi doloremque blanditiis unde omnis, velit molestiae voluptas placeat qui provident ab facilis.</p>
-			</li>
+			</li>-->
 		    </ul>
 		    <!-- Tabs Content -->
 		</div> 

@@ -73,48 +73,6 @@
 							</ul>
 						</div>
 					</div>
-					<!--<span class="top_login">
-						<i class="icon ico-key3"></i><a class="popup-with-move-anim" href="#login-popup">Login</a>
-					</span>-->
-					<!--<div class="zoom-anim-dialog small-dialog mfp-hide login_popup" id="login-popup">
-						<form class="login_form_colored">
-							<div class="lfc_user_row">
-								<span class="lfc_header">Login to your Account</span>
-							</div>
-							<div class="lfc_user_row">
-								<label for="login_user_name">
-									<span class="lfc_alert"></span>
-									<i class="lfc_icon ico-user5"></i>
-									<input type="text" name="login_user_name" id="login_user_name">
-								</label>
-							</div>
-							<div class="lfc_user_row">
-								<label for="login_password">
-									<span class="lfc_alert"></span>
-									<i class="lfc_icon ico-key3"></i>
-									<input type="password" name="login_password" id="login_password">
-								</label>	
-							</div>
-							<div class="lfc_user_row clearfix">
-								<div class="my_col_half">
-									<label for="rememberme">
-										<span class="remember-box">
-											<input type="checkbox" id="rememberme" name="rememberme">
-											<span>Remember me</span>
-										</span>
-									</label>
-								</div>
-								<div class="my_col_half clearfix">
-									<button type="submit" name="login" class="send_button f_right upper">
-										Sign in
-									</button>
-								</div>
-							</div>
-							<a class="lfc_forget_pass" href="#">Forgot Your Password?</a>
-						</form>
-					</div>-->
-					<!--<span><i class="icon ico-phone5"></i><span class="title">Call Us :</span> (123) 456 - 7890</span>
-					<span><i class="icon ico-comment2"></i><span class="title">Support :</span> (123) 456 - 7890</span>-->
 				</div>
 			        
 				<div class="top-socials box_socials f_right">
@@ -161,7 +119,7 @@
 		<div id="navigation_bar">
 			<div class="content">
 				<div id="logo">
-					<a href="index.html">
+					<a href="<?php echo base_url(); ?>aptikma/index">
 						<img class="logo_dark" src="<?php echo base_url(); ?>assets/images/logo-dark.png" alt="Enar Logo">
 						<img class="logo_light" src="<?php echo base_url(); ?>assets/images/logo-light.png" alt="Enar Logo">
 					</a>
@@ -195,7 +153,7 @@
 							    <a href="<?php echo base_url(); ?>aptikma/services"><span>Layanan</span></a>
 							</li>
 							<li class="has_tab_menu mobile_menu_toggle">
-								<a href="#"><span>Portfolio</span></a>
+								<a href="<?php echo base_url(); ?>aptikma/portfolio"><span>Portfolio</span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
 								<a href="#"><span>Kontak</span></a>

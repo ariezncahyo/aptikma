@@ -45,17 +45,38 @@ class aptikma extends CI_Controller {
     {
         $this->load->model('seo_homepage_model');
         $this->load->model('label_services_model');
-        $this->load->model('ourgoal_aboutus_model');
-        $this->load->model('ourskill_aboutus_model');
-        $this->load->model('skillvalue_aboutus_model');
+        $this->load->model('summary_services_model');
+        $this->load->model('services_services_model');
+        $this->load->model('features_services_model');
+        $this->load->model('other_services_model');
         $this->load->model('whychoose_homepage_model');
         $this->data['seo_homepage'] = $this->seo_homepage_model->listseo();
         $this->data['label_services'] = $this->label_services_model->listlabel();
-        $this->data['ourgoal_aboutus'] = $this->ourgoal_aboutus_model->listourgoal();
-        $this->data['ourskill_aboutus'] = $this->ourskill_aboutus_model->listourskill();
-        $this->data['skillvalue_aboutus'] = $this->skillvalue_aboutus_model->listskillvalue();
+        $this->data['summary_services'] = $this->summary_services_model->listsummary();
+        $this->data['services_services'] = $this->services_services_model->listservices();
+        $this->data['features_services'] = $this->features_services_model->listfeatures();
+        $this->data['other_services'] = $this->other_services_model->listother();
         $this->data['whychoose_homepage'] = $this->whychoose_homepage_model->listwhychoose();        
         $this->load->view('services', $this->data);    
+    }
+
+    public function portfolio()
+    {
+        $this->load->model('seo_homepage_model');
+        $this->load->model('label_portfolio_model');
+        $this->load->model('category_portfolio_model');
+        $this->load->model('portfolio_portfolio_model');
+        $this->load->model('features_services_model');
+        $this->load->model('other_services_model');
+        $this->load->model('whychoose_homepage_model');
+        $this->data['seo_homepage'] = $this->seo_homepage_model->listseo();
+        $this->data['label_portfolio'] = $this->label_portfolio_model->listlabel();
+        $this->data['category_portfolio'] = $this->category_portfolio_model->listcategory();
+        $this->data['portfolio_portfolio'] = $this->portfolio_portfolio_model->listportfolio();
+        $this->data['features_services'] = $this->features_services_model->listfeatures();
+        $this->data['other_services'] = $this->other_services_model->listother();
+        $this->data['whychoose_homepage'] = $this->whychoose_homepage_model->listwhychoose();        
+        $this->load->view('portfolio', $this->data);    
     }
 
     public function photoprofil($id)
