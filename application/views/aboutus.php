@@ -156,10 +156,10 @@
 								<a href="<?php echo base_url(); ?>aptikma/portfolio"><span>Portfolio</span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="#"><span>Kontak</span></a>
+								<a href="<?php echo base_url(); ?>aptikma/contactus"><span>Kontak</span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="#"><span>Blog</span></a>
+								<a href="<?php echo base_url(); ?>aptikma/blog"><span>Blog</span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
 								<a href="#"><span>Karir</span></a>

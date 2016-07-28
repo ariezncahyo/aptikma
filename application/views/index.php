@@ -10,7 +10,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<!-- Important stuff for SEO, don't neglect. (And don't dupicate values across your site!) -->
-	<?php $seo=(array)$seo_homepage->row(); $label=(array)$label_homepage->row(); $services=(array)$services_homepage->row(); $contact=(array)$contact_homepage->row(); $whychoose=(array)$whychoose_homepage->row();  ?>
+	<?php $seo=(array)$seo_homepage->row(); $label=(array)$label_homepage->row(); $services=(array)$services_homepage->row(); $contact=(array)$contact_homepage->row(); $whychoose=(array)$whychoose_homepage->row(); $category=(array)$category_portfolio->result(); $portfolio=(array)$portfolio_portfolio->result(); $blog=(array)$blog_blog->result(); ?>
 	<meta name="author" content="Aptikma Studio" />
 	<meta name="description" content="<?php echo $seo['meta_desc_'.WEB_LANG]; ?>" />
 	<meta name="keyword" content="<?php echo $seo['meta_keyword_'.WEB_LANG]; ?>"/>
@@ -151,13 +151,13 @@
 								<a href="<?php echo base_url(); ?>aptikma/portfolio"><span>Portfolio</span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="#"><span>Kontak</span></a>
+								<a href="<?php echo base_url(); ?>aptikma/contactus"><span>Kontak</span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="#"><span>Blog</span></a>
+								<a href="<?php echo base_url(); ?>aptikma/blog"><span>Blog</span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="#"><span>Karir</span></a>
+								<a href="<?php echo base_url(); ?>aptikma/career"><span>Karir</span></a>
 							</li>
 						</ul>
 					</div>
@@ -633,16 +633,28 @@
 			<div id="options" class="sort_options clearfix">
 			    <ul data-option-key="filter" class="option-set clearfix" id="filter-by">
 				<li><a data-option-value="*" class="selected" href="#"><span>all</span><span class="num"></span></a></li>
-				<li><a data-option-value=".design" class="" href="#"><span>Design</span><span class="num"></span></a></li>
-				<li><a data-option-value=".photography" class="" href="#"><span>Photography</span><span class="num"></span></a></li>
+
+				<?php foreach($category as $categorys)
+				{
+				?>
+				<li><a data-option-value=".<?php echo $categorys->{"category"}; ?>" class="" href="#"><span><?php echo $categorys->{"name_".WEB_LANG}; ?></span><span class="num"></span></a></li>
+				<?php
+				}
+				?>
+				<!--<li><a data-option-value=".photography" class="" href="#"><span>Photography</span><span class="num"></span></a></li>
 				<li><a data-option-value=".video" class="" href="#"><span>Video</span><span class="num"></span></a></li>
 				<li><a data-option-value=".printing" class="" href="#"><span>Printing</span><span class="num"></span></a></li>
-				<li><a data-option-value=".wordpress" class="" href="#"><span>Wordpress</span><span class="num"></span></a></li>
+				<li><a data-option-value=".wordpress" class="" href="#"><span>Wordpress</span><span class="num"></span></a></li>-->
 			    </ul>
 			</div>     
 				   
 			<div class="hm_filter_wrapper_con">
-			    <div class="filter_item_block video">
+
+				<?php foreach($portfolio as $portfolios ) 
+				{
+
+				?>
+			    <div class="filter_item_block <?php echo $portfolios->{"category"}; ?>">
 				    <div class="porto_block">
 					    <div class="porto_type">
 						    <a data-rel="magnific-popup" href="<?php echo base_url(); ?>assets/images/portfolio/porto1.jpg">
@@ -655,17 +667,13 @@
 						    </div>
 					    </div>
 					    <div class="porto_desc">
-						<h6 class="name">Flat Logo Design</h6>
-						<div class="porto_meta clearfix">
-						    <span class="porto_date"><span class="number">20141213</span>2014/12/13</span>
-						    <span class="porto_nums">
-							<span class="comm"><i class="ico-comments"></i><span class="comm_counter">45</span></span>
-							<span class="like"><i class="ico-heart2"></i><span class="like_counter">120</span></span>
-						    </span>
-						</div>
+						<h6 class="name"><?php echo $portfolios->{"title_".WEB_LANG}; ?></h6>
 					    </div>
 				    </div>
 			    </div><!-- Item -->
+			    <?php
+				}
+			    ?>
 			    
 			    <div class="filter_item_block design video printing wordpress">
 				    <div class="porto_block">
@@ -692,7 +700,7 @@
 				    </div>
 			    </div><!-- Item -->
 			    
-			    <div class="filter_item_block design wordpress">
+			    <!--<div class="filter_item_block design wordpress">
 				    <div class="porto_block">
 					    <div class="porto_type">
 						    <a data-rel="magnific-popup" href="<?php echo base_url(); ?>assets/images/portfolio/porto3.jpg">
@@ -715,9 +723,9 @@
 						</div>
 					    </div>
 				    </div>
-			    </div><!-- Item -->
+			    </div>--><!-- Item -->
 			    
-			    <div class="filter_item_block design photography printing">
+			    <!--<div class="filter_item_block design photography printing">
 				    <div class="porto_block">
 					    <div class="porto_type">
 						    <a data-rel="magnific-popup" href="<?php echo base_url(); ?>assets/images/portfolio/porto4.jpg">
@@ -740,9 +748,9 @@
 						</div>
 					    </div>
 				    </div>
-			    </div><!-- Item -->
+			    </div>--><!-- Item -->
 			    
-			    <div class="filter_item_block design wordpress">
+			    <!--<div class="filter_item_block design wordpress">
 				    <div class="porto_block">
 					    <div class="porto_type">
 						    <a data-rel="magnific-popup" href="<?php echo base_url(); ?>assets/images/portfolio/porto5.jpg">
@@ -765,9 +773,9 @@
 						</div>
 					    </div>
 				    </div>
-			    </div><!-- Item -->
+			    </div>--><!-- Item -->
 			    
-			    <div class="filter_item_block design wordpress photography printing">
+			    <!--<div class="filter_item_block design wordpress photography printing">
 				    <div class="porto_block">
 					    <div class="porto_type">
 						    <a data-rel="magnific-popup" href="<?php echo base_url(); ?>assets/images/portfolio/porto6.jpg">
@@ -790,7 +798,7 @@
 						</div>
 					    </div>
 				    </div>
-			    </div><!-- Item -->
+			    </div>--><!-- Item -->
 			    
 			    <div class="filter_item_block design wordpress photography">
 				    <div class="porto_block">
@@ -860,7 +868,7 @@
 			<!-- Filter Content -->
 			<div class="hm_filter_wrapper masonry_posts three_blocks">  
 				<ul class="hm_filter_wrapper_con">
-			    		<li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp">
+			    		<!--<li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp">
 						<div class="blog_grid_block">
 							<div class="blog_grid_desc">
 								<h6 class="title"><a href="#">Awesome Gallery Post</a></h6>
@@ -918,11 +926,14 @@
 								<p class="desc">Lorem Ipsum is simply dummy text of the prine and typesetting industry Lorem Ipsum is simply dummy text of the prine and typesetting industry Lorem Ipsum.</p>
 							</div>
 						</div>
-					</li><!-- Item -->
+					</li>--><!-- Item -->
+					<?php foreach($blog as $blogs)
+					{
+					?>
 					<li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp">
 						<div class="blog_grid_block">
 							<div class="blog_grid_desc">
-								<h6 class="title"><a href="#">Amazing standard post</a></h6>
+								<h6 class="title"><a href="#"><?php echo $blogs->{"title"}; ?></a></h6>
 							</div>
 							<div class="feature_inner">
 								<div class="feature_inner_corners">
@@ -941,32 +952,29 @@
 									<span class="meta_part">
 										<a href="#">
 											<i class="ico-clock7"></i>
-											<span>February 15, 2015</span>
-										</a>
-									</span>
-									<span class="meta_part">
-										<a href="#">
-											<i class="ico-comment-o"></i>
-											<span>41 Comments</span>
+											<span><?php $date=date_create($blogs->{"date"});  echo date_format($date,"l, j F Y"); ?></span>
 										</a>
 									</span>
 									<span class="meta_part">
 										<i class="ico-folder-open-o"></i>
 										<span>
-											<a href="#">News</a>, <a href="#">Events</a>
+											<a href="#"><?php echo $blogs->{"name_".WEB_LANG}; ?></a>
 										</span>
 									</span>
 									<span class="meta_part">
 										<a href="#">
 											<i class="ico-user5"></i>
-											<span>John Doe</span>
+											<span><?php echo $blogs->{"author"}; ?></span>
 										</a>
 									</span>
 								</span>
-								<p class="desc">Lorem Ipsum is simply dummy text of the prine and typesetting industry Lorem Ipsum is simply dummy text of the prine and typesetting industry Lorem Ipsum.</p>
+								<p class="desc"><?php echo $blogs->{"desc"}; ?></p>
 							</div>
 						</div>
 					</li><!-- Item -->
+					<?php
+					}
+					?>
 					<li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp">
 						<div class="blog_grid_block hosted_video_audio_con">
 							<div class="blog_grid_desc">
@@ -1011,17 +1019,17 @@
 							</div>
 						</div>
 					</li><!-- Item -->
-					<li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp">
+					<!--<li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp">
 						<div class="blog_grid_block">
 							<div class="blog_grid_desc">
 								<h6 class="title"><a href="#">My First Quote</a></h6>
 							</div>
 							<div class="feature_inner">
 								<div class="feature_inner_corners">
-									<!-- <div class="feature_inner_btns">
+								 	<div class="feature_inner_btns">
 										<a href="#" class="expand_image"><i class="ico-maximize"></i></a>
 										<a href="#" class="icon_link"><i class="ico-link3"></i></a>
-									</div> -->
+									</div>
 									<a href="#" class="quote_con">
 										<span>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</span>
 										<span class="quote_author">Mike Ehrmantraut</span>
@@ -1059,8 +1067,8 @@
 								<p class="desc">Lorem Ipsum is simply dummy text of the prine and typesetting industry Lorem Ipsum is simply dummy text of the prine and typesetting industry Lorem Ipsum.</p>
 							</div>
 						</div>
-					</li><!-- Item -->
-					<li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp">
+					</li>--><!-- Item -->
+					<!--<li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp">
 						<div class="blog_grid_block">
 							<div class="blog_grid_desc">
 								<h6 class="title"><a href="#">Standard Blog Post</a></h6>
@@ -1107,8 +1115,8 @@
 								<p class="desc">Lorem Ipsum is simply dummy text of the prine and typesetting industry Lorem Ipsum is simply dummy text of the prine and typesetting industry Lorem Ipsum.</p>
 							</div>
 						</div>
-					</li><!-- Item -->
-					<li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp">
+					</li>--><!-- Item -->
+					<!--<li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp">
 						<div class="blog_grid_block">
 							<div class="blog_grid_desc">
 								<h6 class="title"><a href="#">SoundCloud Audio Post</a></h6>
@@ -1116,7 +1124,7 @@
 							<div class="feature_inner">
 								<div class="feature_inner_corners">
 									<div class="feature_inner_btns">
-										<!-- <a href="#" class="expand_image"><i class="ico-maximize"></i></a> -->
+										<a href="#" class="expand_image"><i class="ico-maximize"></i></a>
 										<a href="#" class="icon_link"><i class="ico-link3"></i></a>
 									</div>
 									<div class="embed-container">
@@ -1155,18 +1163,18 @@
 								<p class="desc">Lorem Ipsum is simply dummy text of the prine and typesetting industry prine.</p>
 							</div>
 						</div>
-					</li><!-- Item -->
-					<li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp">
+					</li>--><!-- Item -->
+					<!--<li class="filter_item_block animated" data-animation-delay="300" data-animation="fadeInUp">
 						<div class="blog_grid_block">
 							<div class="blog_grid_desc">
 								<h6 class="title"><a href="#">Vimeo Video Post</a></h6>
 							</div>
 							<div class="feature_inner no_corners">
 								<div class="feature_inner_corners">
-									<!-- <div class="feature_inner_btns">
+									<div class="feature_inner_btns">
 										<a href="#" class="expand_image"><i class="ico-maximize"></i></a>
 										<a href="#" class="icon_link"><i class="ico-link3"></i></a>
-									</div> -->
+									</div>
 									<div class="embed-container">
 										<iframe src="http://player.vimeo.com/video/29193046" width="100%" style="border: 0px none;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 									</div>
@@ -1203,7 +1211,7 @@
 								<p class="desc">Lorem Ipsum is simply dummy text of the prine and typesetting industry prine.</p>
 							</div>
 						</div>
-					</li><!-- Item -->
+					</li>--><!-- Item -->
 				</ul>
 			</div>
 			<!-- End Filter Content -->

@@ -16,11 +16,17 @@ class aptikma extends CI_Controller {
         $this->load->model('services_homepage_model');
         $this->load->model('contact_homepage_model');
         $this->load->model('whychoose_homepage_model');
+        $this->load->model('category_portfolio_model');
+        $this->load->model('portfolio_portfolio_model');   
+        $this->load->model('blog_blog_model');     
 		$this->data['seo_homepage'] = $this->seo_homepage_model->listseo();
         $this->data['label_homepage'] = $this->label_homepage_model->listlabel();
         $this->data['services_homepage'] = $this->services_homepage_model->listservices();
         $this->data['contact_homepage'] = $this->contact_homepage_model->listcontact();
         $this->data['whychoose_homepage'] = $this->whychoose_homepage_model->listwhychoose();
+        $this->data['category_portfolio'] = $this->category_portfolio_model->listcategory();
+        $this->data['portfolio_portfolio'] = $this->portfolio_portfolio_model->listportfolio();            
+        $this->data['blog_blog'] = $this->blog_blog_model->listblog();
         $this->load->view('index', $this->data);
     }
     
@@ -37,7 +43,7 @@ class aptikma extends CI_Controller {
         $this->data['ourgoal_aboutus'] = $this->ourgoal_aboutus_model->listourgoal();
         $this->data['ourskill_aboutus'] = $this->ourskill_aboutus_model->listourskill();
         $this->data['skillvalue_aboutus'] = $this->skillvalue_aboutus_model->listskillvalue();
-        $this->data['whychoose_homepage'] = $this->whychoose_homepage_model->listwhychoose();        
+        $this->data['whychoose_homepage'] = $this->whychoose_homepage_model->listwhychoose();            
         $this->load->view('aboutus', $this->data);    
     }
 
@@ -78,6 +84,62 @@ class aptikma extends CI_Controller {
         $this->data['whychoose_homepage'] = $this->whychoose_homepage_model->listwhychoose();        
         $this->load->view('portfolio', $this->data);    
     }
+
+    public function contactus()
+    {
+        $this->load->model('seo_homepage_model');
+        $this->load->model('label_contactus_model');
+        $this->load->model('contact_homepage_model');
+        $this->load->model('portfolio_portfolio_model');
+        $this->load->model('features_services_model');
+        $this->load->model('other_services_model');
+        $this->load->model('whychoose_homepage_model');
+        $this->data['seo_homepage'] = $this->seo_homepage_model->listseo();
+        $this->data['label_contactus'] = $this->label_contactus_model->listlabel();
+        $this->data['contact_homepage'] = $this->contact_homepage_model->listcontact();
+        $this->data['portfolio_portfolio'] = $this->portfolio_portfolio_model->listportfolio();
+        $this->data['features_services'] = $this->features_services_model->listfeatures();
+        $this->data['other_services'] = $this->other_services_model->listother();
+        $this->data['whychoose_homepage'] = $this->whychoose_homepage_model->listwhychoose();        
+        $this->load->view('contactus', $this->data);    
+    }
+
+    public function blog()
+    {
+        $this->load->model('seo_homepage_model');
+        $this->load->model('label_blog_model');
+        $this->load->model('blog_blog_model');
+        $this->load->model('category_blog_model');
+        $this->load->model('other_services_model');
+        $this->load->model('whychoose_homepage_model');
+        $this->data['seo_homepage'] = $this->seo_homepage_model->listseo();
+        $this->data['label_blog'] = $this->label_blog_model->listlabel();
+        $this->data['blog_blog'] = $this->blog_blog_model->listblog();
+        $this->data['category_blog'] = $this->category_blog_model->listcategory();
+        //$this->data['latest_blog'] = $this->blog_blog_model->latestblog();
+        $this->data['other_services'] = $this->other_services_model->listother();
+        $this->data['whychoose_homepage'] = $this->whychoose_homepage_model->listwhychoose();        
+        $this->load->view('blog', $this->data);    
+    }
+
+    public function career()
+    {
+        $this->load->model('seo_homepage_model');
+        $this->load->model('label_career_model');
+        $this->load->model('job_career_model');
+        $this->load->model('category_blog_model');
+        $this->load->model('features_services_model');
+        $this->load->model('other_services_model');
+        $this->load->model('whychoose_homepage_model');
+        $this->data['seo_homepage'] = $this->seo_homepage_model->listseo();
+        $this->data['label_career'] = $this->label_career_model->listlabel();
+        $this->data['job_career'] = $this->job_career_model->listjob();
+        $this->data['category_blog'] = $this->category_blog_model->listcategory();
+        $this->data['features_services'] = $this->features_services_model->listfeatures();
+        $this->data['other_services'] = $this->other_services_model->listother();
+        $this->data['whychoose_homepage'] = $this->whychoose_homepage_model->listwhychoose();        
+        $this->load->view('career', $this->data);    
+    }    
 
     public function photoprofil($id)
 	{
