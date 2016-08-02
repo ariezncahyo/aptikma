@@ -10,7 +10,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<!-- Important stuff for SEO, don't neglect. (And don't dupicate values across your site!) -->
-	<?php $seo=(array)$seo_homepage->row(); $label=(array)$label_services->row(); $summary=(array)$summary_services->row(); $services=(array)$services_services->row(); $features=(array)$features_services->row(); $other=(array)$other_services->row(); ?>
+	<?php $seo=(array)$seo_homepage->row(); $menu=(array)$menu_homepage->row(); $label=(array)$label_services->row(); $summary=(array)$summary_services->row(); $services=(array)$services_services->row(); $features=(array)$features_services->row(); $other=(array)$other_services->row(); ?>
 	<title><?php echo $label["label_".WEB_LANG]; ?></title>
 	<meta name="author" content="Aptikma Studio" />
 	<meta name="description" content="<?php echo $seo["meta_desc_".WEB_LANG]; ?>" />
@@ -184,25 +184,28 @@
 						</span>		
 						<ul id="navy" class="clearfix">
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); ?>aptikma/index"><span>Home</span></a>
+								<a href="<?php echo base_url(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); ?>aptikma/aboutus"><span>Tentang Kami</span></a>
+								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle current_page_item">
-							    <a href="<?php echo base_url(); ?>aptikma/services"><span>Layanan</span></a>
-							</li>
-							<li class="has_tab_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); ?>aptikma/portfolio"><span>Portfolio</span></a>
+							    <a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); ?>aptikma/contactus"><span>Kontak</span></a>
+								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); ?>aptikma/blog"><span>Blog</span></a>
+								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); ?>aptikma/career"><span>Karir</span></a>
+								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
+							</li>
+							<li class="normal_menu mobile_menu_toggle">
+								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
+							</li>
+							<li class="normal_menu mobile_menu_toggle">
+								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
 							</li>
 						</ul>
 					</div>

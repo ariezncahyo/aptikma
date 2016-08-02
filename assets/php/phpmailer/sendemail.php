@@ -1,6 +1,8 @@
 <?php
 
-require_once('class.phpmailer.php');
+require_once('../../../vendor/autoload.php');
+require_once('../../../vendor/phpmailer/phpmailer/class.smtp.php');
+require_once('../../../vendor/phpmailer/phpmailer/class.phpmailer.php');
 
 $mail = new PHPMailer();
 
@@ -9,7 +11,7 @@ if( isset( $_POST['contact-us-submit'] ) ) {
         $message_content = '';
 		$detect_errors = $_SERVER['HTTP_REFERER'] ? '<br><br><br><br>This Mail Submitted From: ' . $_SERVER['HTTP_REFERER'] : '';
 		
-		$receiver_mail = 'idealtheme@gmail.com'; // Add a recipient
+		$receiver_mail = 'mkengenesius@gmail.com'; // Add a recipient
         $poss_name = 'IdealTheme'; // Name is optional
 		
 		$client_subject = isset($client_subject) ? $client_subject : 'Message from ( Form 1 )'; // change it to any name

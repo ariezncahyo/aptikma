@@ -10,7 +10,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<!-- Important stuff for SEO, don't neglect. (And don't dupicate values across your site!) -->
-	<?php $seo=(array)$seo_homepage->row(); $label=(array)$label_homepage->row(); $services=(array)$services_homepage->row(); $contact=(array)$contact_homepage->row(); $whychoose=(array)$whychoose_homepage->row(); $category=(array)$category_portfolio->result(); $portfolio=(array)$portfolio_portfolio->result(); $blog=(array)$blog_blog->result(); ?>
+	<?php $seo=(array)$seo_homepage->row(); $menu=(array)$menu_homepage->row(); $label=(array)$label_homepage->row(); $services=(array)$services_homepage->row(); $contact=(array)$contact_homepage->row(); $whychoose=(array)$whychoose_homepage->row(); $category=(array)$category_portfolio->result(); $portfolio=(array)$portfolio_portfolio->result(); $blog=(array)$blog_blog->result(); ?>
 	<meta name="author" content="Aptikma Studio" />
 	<meta name="description" content="<?php echo $seo['meta_desc_'.WEB_LANG]; ?>" />
 	<meta name="keyword" content="<?php echo $seo['meta_keyword_'.WEB_LANG]; ?>"/>
@@ -139,25 +139,28 @@
 						</span>		
 						<ul id="navy" class="clearfix">
 							<li class="normal_menu mobile_menu_toggle current_page_item">
-								<a href="<?php echo base_url(); ?>aptikma/index"><span>Home</span></a>
+								<a href="<?php echo base_url(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); ?>aptikma/aboutus"><span>Tentang Kami</span></a>
+								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-							    <a href="<?php echo base_url(); ?>aptikma/services"><span>Layanan</span></a>
-							</li>
-							<li class="has_tab_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); ?>aptikma/portfolio"><span>Portfolio</span></a>
+							    <a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); ?>aptikma/contactus"><span>Kontak</span></a>
+								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); ?>aptikma/blog"><span>Blog</span></a>
+								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
 							</li>
 							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); ?>aptikma/career"><span>Karir</span></a>
+								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
+							</li>
+							<li class="normal_menu mobile_menu_toggle">
+								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
+							</li>
+							<li class="normal_menu mobile_menu_toggle">
+								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
 							</li>
 						</ul>
 					</div>
@@ -1239,7 +1242,7 @@
 					<h2 class="title1 upper"><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></h2>
 					<span class="spacer20"></span>
 					
-					<form class="hm_contact_form" id="contact-us-form" name="contact-us-form" action="php/phpmailer/sendemail.php" method="post">
+					<form class="hm_contact_form" id="contact-us-form" name="contact-us-form" action="<?php echo base_url(); ?>assets/php/phpmailer/sendemail.php" method="post">
 						<div class="form_row clearfix">
 							<label for="contact-us-name">
 								<span class="hm_field_name"><?php $label=(array)$label_homepage->next_row(); echo $label["label_".WEB_LANG]; ?></span>
@@ -1347,7 +1350,7 @@
 <script src="<?php echo base_url(); ?>assets/js/jquery.themepunch.revolution.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/mediaelement-and-player.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/isotope.pkgd.min.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=true"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3 AIzaSyDwrj9vZ1MGkPvU5kJfZehbRByXdgckosc&sensor=true"></script>
 <script src="<?php echo base_url(); ?>assets/js/gmaps.js"></script>
 <!-- this is where we put our custom functions -->
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/functions.js"></script>-->

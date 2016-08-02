@@ -11,6 +11,7 @@ class aptikma extends CI_Controller {
 
     public function index()
 	{
+        $this->load->model('menu_homepage_model');
         $this->load->model('seo_homepage_model');
         $this->load->model('label_homepage_model');
         $this->load->model('services_homepage_model');
@@ -18,7 +19,8 @@ class aptikma extends CI_Controller {
         $this->load->model('whychoose_homepage_model');
         $this->load->model('category_portfolio_model');
         $this->load->model('portfolio_portfolio_model');   
-        $this->load->model('blog_blog_model');     
+        $this->load->model('blog_blog_model');    
+        $this->data['menu_homepage'] = $this->menu_homepage_model->listmenu();
 		$this->data['seo_homepage'] = $this->seo_homepage_model->listseo();
         $this->data['label_homepage'] = $this->label_homepage_model->listlabel();
         $this->data['services_homepage'] = $this->services_homepage_model->listservices();
@@ -32,12 +34,14 @@ class aptikma extends CI_Controller {
     
     public function aboutus()
     {
+        $this->load->model('menu_homepage_model');        
         $this->load->model('seo_homepage_model');
         $this->load->model('label_aboutus_model');
         $this->load->model('ourgoal_aboutus_model');
         $this->load->model('ourskill_aboutus_model');
         $this->load->model('skillvalue_aboutus_model');
         $this->load->model('whychoose_homepage_model');
+        $this->data['menu_homepage'] = $this->menu_homepage_model->listmenu();
         $this->data['seo_homepage'] = $this->seo_homepage_model->listseo();
         $this->data['label_aboutus'] = $this->label_aboutus_model->listlabel();
         $this->data['ourgoal_aboutus'] = $this->ourgoal_aboutus_model->listourgoal();
@@ -49,6 +53,7 @@ class aptikma extends CI_Controller {
 
     public function services()
     {
+        $this->load->model('menu_homepage_model');
         $this->load->model('seo_homepage_model');
         $this->load->model('label_services_model');
         $this->load->model('summary_services_model');
@@ -56,6 +61,7 @@ class aptikma extends CI_Controller {
         $this->load->model('features_services_model');
         $this->load->model('other_services_model');
         $this->load->model('whychoose_homepage_model');
+        $this->data['menu_homepage'] = $this->menu_homepage_model->listmenu();
         $this->data['seo_homepage'] = $this->seo_homepage_model->listseo();
         $this->data['label_services'] = $this->label_services_model->listlabel();
         $this->data['summary_services'] = $this->summary_services_model->listsummary();
@@ -68,6 +74,7 @@ class aptikma extends CI_Controller {
 
     public function portfolio()
     {
+        $this->load->model('menu_homepage_model');
         $this->load->model('seo_homepage_model');
         $this->load->model('label_portfolio_model');
         $this->load->model('category_portfolio_model');
@@ -75,6 +82,7 @@ class aptikma extends CI_Controller {
         $this->load->model('features_services_model');
         $this->load->model('other_services_model');
         $this->load->model('whychoose_homepage_model');
+        $this->data['menu_homepage'] = $this->menu_homepage_model->listmenu();
         $this->data['seo_homepage'] = $this->seo_homepage_model->listseo();
         $this->data['label_portfolio'] = $this->label_portfolio_model->listlabel();
         $this->data['category_portfolio'] = $this->category_portfolio_model->listcategory();
@@ -87,6 +95,7 @@ class aptikma extends CI_Controller {
 
     public function contactus()
     {
+        $this->load->model('menu_homepage_model');
         $this->load->model('seo_homepage_model');
         $this->load->model('label_contactus_model');
         $this->load->model('contact_homepage_model');
@@ -94,6 +103,7 @@ class aptikma extends CI_Controller {
         $this->load->model('features_services_model');
         $this->load->model('other_services_model');
         $this->load->model('whychoose_homepage_model');
+        $this->data['menu_homepage'] = $this->menu_homepage_model->listmenu();
         $this->data['seo_homepage'] = $this->seo_homepage_model->listseo();
         $this->data['label_contactus'] = $this->label_contactus_model->listlabel();
         $this->data['contact_homepage'] = $this->contact_homepage_model->listcontact();
@@ -106,12 +116,14 @@ class aptikma extends CI_Controller {
 
     public function blog()
     {
+        $this->load->model('menu_homepage_model');
         $this->load->model('seo_homepage_model');
         $this->load->model('label_blog_model');
         $this->load->model('blog_blog_model');
         $this->load->model('category_blog_model');
         $this->load->model('other_services_model');
         $this->load->model('whychoose_homepage_model');
+        $this->data['menu_homepage'] = $this->menu_homepage_model->listmenu();
         $this->data['seo_homepage'] = $this->seo_homepage_model->listseo();
         $this->data['label_blog'] = $this->label_blog_model->listlabel();
         $this->data['blog_blog'] = $this->blog_blog_model->listblog();
@@ -124,6 +136,7 @@ class aptikma extends CI_Controller {
 
     public function career()
     {
+        $this->load->model('menu_homepage_model');
         $this->load->model('seo_homepage_model');
         $this->load->model('label_career_model');
         $this->load->model('job_career_model');
@@ -131,6 +144,7 @@ class aptikma extends CI_Controller {
         $this->load->model('features_services_model');
         $this->load->model('other_services_model');
         $this->load->model('whychoose_homepage_model');
+        $this->data['menu_homepage'] = $this->menu_homepage_model->listmenu();
         $this->data['seo_homepage'] = $this->seo_homepage_model->listseo();
         $this->data['label_career'] = $this->label_career_model->listlabel();
         $this->data['job_career'] = $this->job_career_model->listjob();
