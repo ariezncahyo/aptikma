@@ -10,7 +10,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<!-- Important stuff for SEO, don't neglect. (And don't dupicate values across your site!) -->
-	<?php $seo=(array)$seo_homepage->row(); $menu=(array)$menu_homepage->row(); $label=(array)$label_aboutus->row(); $ourgoal=(array)$ourgoal_aboutus->row(); $whychoose=(array)$whychoose_homepage->row(); $ourskill=(array)$ourskill_aboutus->row(); $skillvalue=(array)$skillvalue_aboutus->row(); ?>
+	<?php $seo=(array)$seo_homepage->row(); $label=(array)$label_aboutus->row(); $ourgoal=(array)$ourgoal_aboutus->row(); $whychoose=(array)$whychoose_homepage->row(); $ourskill=(array)$ourskill_aboutus->row(); $skillvalue=(array)$skillvalue_aboutus->row(); ?>
 	<title><?php echo $label["label_".WEB_LANG]; ?></title>
 	<meta name="author" content="Aptikma Studio" />
 	<meta name="description" content="<?php echo $seo["meta_desc_".WEB_LANG]; ?>" />
@@ -59,123 +59,7 @@
 </div>
 
 <div id="main_wrapper">
-	<header id="site_header">
-		<div class="topbar"><!-- class ( topbar_colored  ) -->
-			<div class="content clearfix">
-			
-				<div class="top_details clearfix f_left">
-					<div class="languages-select languages-drop">
-						<span><i class="ico-globe4"></i><span>Indonesia</span></span>
-						<div class="languages-panel">
-							<ul class="languages-panel-con">
-								<li class="active"><a href="#">Indonesia <i class="ico-check lang_checked"></i></a></li>
-								<li><a href="#">English</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			        
-				<div class="top-socials box_socials f_right">
-					<a href="#" target="_blank">
-						<span class="soc_name">Facebook</span>
-						<span class="soc_icon_bg"></span>
-						<i class="ico-facebook4"></i>
-					</a>
-					<a href="#" target="_blank">
-						<span class="soc_name">Twitter</span>
-						<span class="soc_icon_bg"></span>
-						<i class="ico-twitter4"></i>
-					</a>
-					<a href="#" target="_blank">
-						<span class="soc_name">Google+</span>
-						<span class="soc_icon_bg"></span>
-						<i class="ico-google-plus"></i>
-					</a>     
-					<a href="skype:#?call">
-						<span class="soc_name">Skype</span>
-						<span class="soc_icon_bg"></span>
-						<i class="ico-skype"></i>
-					</a>
-					<a href="#" target="_blank">
-						<span class="soc_name">Picassa</span>
-						<span class="soc_icon_bg"></span>
-						<i class="ico-picassa"></i>
-					</a>
-					<a href="#" target="_blank">
-						<span class="soc_name">Vimeo</span>
-						<span class="soc_icon_bg"></span>
-						<i class="ico-vimeo"></i>
-					</a>
-				 </div>
-			</div>
-			<!-- End content -->
-			<span class="top_expande not_expanded">
-				<i class="no_exp ico-angle-double-down"></i>
-				<i class="exp ico-angle-double-up"></i>
-			</span>
-		</div>
-		<!-- End topbar -->
-			
-		<div id="navigation_bar">
-			<div class="content">
-				<div id="logo">
-					<a href="<?php echo base_url(); ?>aptikma/index">
-						<img class="logo_dark" src="<?php echo base_url(); ?>assets/images/logo-dark.png" alt="Enar Logo">
-						<img class="logo_light" src="<?php echo base_url(); ?>assets/images/logo-light.png" alt="Enar Logo">
-					</a>
-				</div>
-				
-				<!-- Top Card -->
-				<!-- End Top Card -->
-				
-				<!-- Top Search -->
-				<!--form class="top_search clearfix small_top_search">
-					<div class="top_search_con">
-						<input type="text" class="s" placeholder="Search Here ...">
-						<span class="top_search_icon"><i class="ico-search4"></i></span>
-						<input type="submit" class="top_search_submit" >
-					</div>
-				</form>
-				<!-- End Top Search -->
-		<nav id="main_nav">
-					<div id="nav_menu">
-						<span class="mobile_menu_trigger">
-						    <a href="#" class="nav_trigger"><span></span></a>
-						</span>		
-						<ul id="navy" class="clearfix">
-							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
-							</li>
-							<li class="normal_menu mobile_menu_toggle current_page_item">
-								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
-							</li>
-							<li class="normal_menu mobile_menu_toggle">
-							    <a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
-							</li>
-							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
-							</li>
-							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
-							</li>
-							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
-							</li>
-							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
-							</li>
-							<li class="normal_menu mobile_menu_toggle">
-								<a href="<?php echo base_url(); $menu=(array)$menu_homepage->next_row(); echo $menu["url_link"]; ?>"><span><?php echo $menu["name_".WEB_LANG]; ?></span></a>
-							</li>
-						</ul>
-					</div>
-				</nav>
-				<!-- End Nav -->	
-				
-				<div class="clear"></div>
-			</div>
-		</div>
- 	</header>
+	<?php $this->load->view('menu');  ?>
         <!-- End Main Header -->	
 	
         <!-- Page Title -->
@@ -603,26 +487,7 @@
 	<!-- End Clients 1 -->
 	
 	<!-- footer -->
-	<footer id="footer">
-		<div class="footer_copyright">
-			<div class="container clearfix">
-				<div class="col-md-6">
-					<span class="footer_copy_text">Copyright &copy; 2016 <a href="#">Aptikma Studio</a> -  All Rights Reserved</span>
-				</div>
-				<div class="col-md-6 clearfix">
-					<ul class="footer_menu clearfix">
-						<li><a href="#"><span>Home</span></a></li>
-						<li>/</li>
-						<li><a href="#"><span>About Us</span></a></li>
-						<li>/</li>
-						<li><a href="#"><span>Help Center</span></a></li>
-						<li>/</li>
-						<li><a href="#"><span>Contact Us</span></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<?php $this->load->view('footer');  ?>
 	<!-- End footer -->
 	<a href="#0" class="hm_go_top"></a>
 </div>

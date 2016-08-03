@@ -52,3 +52,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'aptikma';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+require_once( BASEPATH .'database/DB.php' );
+$db =& DB();
+$query = $db->get( 'menu_homepage' );
+$result = $query->result();
+foreach( $result as $row )
+{
+    $route[ $row->url_link_id ]                 = $row->controller;
+    $route[ $row->url_link_id.'/(:any)' ]         = $row->controller.'/$1';
+    $route[ $row->url_link_id.'/(:any)/(:any)' ]         = $row->controller.'/$1/$2';
+   
+//    $route[ $row->controller ]           = 'error404';
+//    $route[ $row->controller.'/:any' ]   = 'error404';
+}
