@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'aptikma';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['admin'] = 'admin/login';
 
 require_once( BASEPATH .'database/DB.php' );
 $db =& DB();

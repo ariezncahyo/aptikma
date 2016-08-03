@@ -1,149 +1,91 @@
 <!DOCTYPE html>
-<html class="no-js before-run" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-  <meta name="description" content="bootstrap admin template">
-  <meta name="author" content="">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>APTIKMA | Log in</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="<?php echo base_url().'assets/admin/'; ?>bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="<?php echo base_url().'assets/admin/'; ?>dist/css/AdminLTE.min.css">
 
-  <title>Bateman | Barang Temuan Teknik Informatika ITS</title>
-
-  <link rel="apple-touch-icon" href="<?php echo base_url(); ?>assets/images/bateman.png">
-  <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/bateman.png">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-extend.min.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/site.min.css">
-
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/animsition/animsition.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/asscrollable/asScrollable.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/switchery/switchery.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/intro-js/introjs.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/slidepanel/slidePanel.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/flag-icon-css/flag-icon.css">
-
-
-  <!-- Page -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/pages/login.css">
-
-  <!-- Fonts -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/fonts/web-icons/web-icons.min.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/fonts/brand-icons/brand-icons.min.css">
-  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
-
-
-  <!--[if lt IE 9]>
-    <script src="../../assets/vendor/html5shiv/html5shiv.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+  </head>
+  <body class="hold-transition login-page">
+    <div class="login-box">
+      <div class="login-logo">
+          <span><b>APTIKMA</b> Login</span>
+      </div><!-- /.login-logo -->
+      <div class="login-box-body">
+        <p class="login-box-msg">Sign in</p>
+        <form id="id_form_login" method="post">
+          <div class="form-group has-feedback">
+            <input type="text" id="id_login_username" required class="form-control" placeholder="Username">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input type="password" id="id_login_password" required class="form-control" placeholder="Password">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+                <img id="load-login" class="center-block" src="<?php echo base_url().'assets/admin/img/ajax-loader.gif' ?>" style="display: none;" />
+                <p id="notif-login" class="pull-right" style="display: none; color: #000;font-size: 11px;" > Login Berhasilllllllllll</p>
+            </div><!-- /.col -->
+            <div class="col-xs-6">
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+            </div><!-- /.col -->
+          </div>
+            <div class="row">
+                <div class="col-xs-8">
+<!--                <a href="#">I forgot my password</a><br>-->
+                </div>
+            </div>
+        </form>
+      </div><!-- /.login-box-body -->
+    </div><!-- /.login-box -->
 
-  <!--[if lt IE 10]>
-    <script src="../../assets/vendor/media-match/media.match.min.js"></script>
-    <script src="../../assets/vendor/respond/respond.min.js"></script>
-    <![endif]-->
-
-  <!-- Scripts -->
-  <script src="<?php echo base_url(); ?>assets/vendor/modernizr/modernizr.js"></script>
-  <script src="<?php echo base_url(); ?>assets/vendor/breakpoints/breakpoints.js"></script>
-  <script>
-    Breakpoints();
-  </script>
-</head>
-<body class="page-login layout-full">
-  <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-
-  <!-- Page -->
-  <div class="page animsition vertical-align text-center" data-animsition-in="fade-in"
-  data-animsition-out="fade-out">
-    <div class="page-content vertical-align-middle">
-      <div class="brand">
-        <img class="brand-img" src="<?php echo base_url(); ?>assets/images/bateman.png" width="150px" hight="150px" alt="...">
-        <h2 class="brand-text">Bateman</h2>
-      </div>
-      <p>Masuk ke halaman akun Anda</p>
-      <?php
-      if(isset($_SESSION['error']))
-      {
-      ?>
-      <div class="alert alert-danger" role="alert">
-        <p class="alert-link">Email atau Password salah</p>
-      </div>
-      <?php
-      }
-      ?>
-      <form method="post" action="<?php echo base_url(); ?>admin/checkLoginAdmin">
-        <div class="form-group">
-          <label class="sr-only" for="inputName">Email</label>
-          <input type="email" class="form-control" id="inputName" name="email_adm" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <label class="sr-only" for="inputPassword">Password</label>
-          <input type="password" class="form-control" id="inputPassword" name="pswd_adm" placeholder="Password">
-        </div>
-        <br>
-        <button type="submit" class="btn btn-primary btn-block">Masuk</button>
-      </form>
-      
-
-      <footer class="page-copyright">
-        <p>WEBSITE oleh Kelompok 8</p>
-        <p>© 2016. <a href="<?php echo base_url() ?>">Sistem Informasi Barang Temuan.</a></p>
-        
-      </footer>
-    </div>
-  </div>
-  <!-- End Page -->
-
-
-  <!-- Core  -->
-  <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.js"></script>
-  <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/bootstrap.js"></script>
-  <script src="<?php echo base_url(); ?>assets/vendor/animsition/jquery.animsition.js"></script>
-  <script src="<?php echo base_url(); ?>assets/vendor/asscroll/jquery-asScroll.js"></script>
-  <script src="<?php echo base_url(); ?>assets/vendor/mousewheel/jquery.mousewheel.js"></script>
-  <script src="<?php echo base_url(); ?>assets/vendor/asscrollable/jquery.asScrollable.all.js"></script>
-  <script src="<?php echo base_url(); ?>assets/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
-
-  <!-- Plugins -->
-  <script src="<?php echo base_url(); ?>assets/vendor/switchery/switchery.min.js"></script>
-  <script src="<?php echo base_url(); ?>assets/vendor/intro-js/intro.js"></script>
-  <script src="<?php echo base_url(); ?>assets/vendor/screenfull/screenfull.js"></script>
-  <script src="<?php echo base_url(); ?>assets/vendor/slidepanel/jquery-slidePanel.js"></script>
-
-  <script src="<?php echo base_url(); ?>assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
-
-  <!-- Scripts -->
-  <script src="<?php echo base_url(); ?>assets/js/core.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/site.js"></script>
-
-  <script src="<?php echo base_url(); ?>assets/js/sections/menu.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/sections/menubar.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/sections/sidebar.js"></script>
-
-  <script src="<?php echo base_url(); ?>assets/js/configs/config-colors.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/configs/config-tour.js"></script>
-
-  <script src="<?php echo base_url(); ?>assets/js/components/asscrollable.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/components/animsition.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/components/slidepanel.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/components/switchery.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/components/jquery-placeholder.js"></script>
-
-  <script>
-    (function(document, window, $) {
-      'use strict';
-
-      var Site = window.Site;
-      $(document).ready(function() {
-        Site.run();
-      });
-    })(document, window, jQuery);
-  </script>
-
-</body>
-
+    <!-- jQuery 2.1.4 -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="<?php echo base_url();?>assets/admin/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $("#id_form_login").submit(function (e){
+            e.preventDefault();
+            $("#load-login").show();
+            $.ajax({
+                url: "<?php echo base_url().'admin/login/proses_login/'; ?>",
+                data: {"username":$("#id_login_username").val(),
+                       "password":$("#id_login_password").val()},
+                type: 'POST',
+                dataType: 'json',
+                success: function (data, textStatus, jqXHR) {
+                    console.log('OK');
+                    $("#notif-login").text(data.status);
+                    $("#load-login").fadeOut(1000,function (){
+                        $("#notif-login").show();
+                        $("#notif-login").fadeOut(3000,function (){
+                                window.location.href="<?php echo base_url().'admin/mainpage'; ?>";
+                            });
+                        });
+                    },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('NO');
+                    
+                }
+            });
+        });
+    </script>
+  </body>
 </html>

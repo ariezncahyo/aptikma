@@ -84,3 +84,18 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+define("DOMAIN_NAME", "http://localhost/aptikma/trunk/");
+
+define("URL_CSS_JS", DOMAIN_NAME."assets/");
+define("URL_IMG", DOMAIN_NAME."assets/img/");
+
+define("URL_FOTO", URL_IMG."temp/");
+define("URL_FOTO_LOGO", URL_IMG."logo/");
+
+define("PATH_FOTO", FCPATH.".assets/img/temp/");
+define("PATH_FOTO_LOGO", FCPATH."./assets/img/logo/");
+define("URL_INAP", DOMAIN_NAME);
+
+define("PASS_INAP","admin");
+define("URL_LOGIN", DOMAIN_NAME."admin/login");
