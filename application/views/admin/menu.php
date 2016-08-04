@@ -36,7 +36,7 @@
                 <li onclick="buka_halaman('mst_seo_homepage','2')"><a><i class="fa fa-circle-o"></i>SEO</a></li>
                 <li onclick="buka_halaman('mst_services_homepage','2')"><a><i class="fa fa-circle-o"></i>Services</a></li>
                 <li onclick="buka_halaman('mst_vissio_homepage','2')"><a><i class="fa fa-circle-o"></i>Vission</a></li>
-                <li onclick="buka_halaman('mst_whychoose_homepage','2')"><a><i class="fa fa-circle-o"></i>Why Choose ???</a></li>
+                <li onclick="buka_halaman('mst_whychoose_homepage','2')"><a><i class="fa fa-circle-o"></i>Why Choose</a></li>
               </ul>
             </li>
             <li class="treeview" id="treeview3">

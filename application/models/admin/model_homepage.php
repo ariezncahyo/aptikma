@@ -50,7 +50,7 @@ class Model_homepage extends CI_Model{
 		$desc_ind = $this->db->escape_str($desc_id);
 		$url_links = $this->db->escape_str($url_link);
 		if($id_banner == ""){
-			$this->db->query("INSERT INTO banner_homepage(name_en, name_id, desc_en, desc_id, photo, urL_link, status) VALUES ('$name_eng', '$name_ind', '$desc_eng', '$desc_ind', '$photo', '$url_links','status')");
+			$this->db->query("INSERT INTO banner_homepage(name_en, name_id, desc_en, desc_id, photo, urL_link, status) VALUES ('$name_eng', '$name_ind', '$desc_eng', '$desc_ind', '$photo', '$url_links','$status')");
 		}else{
 			$this->db->query("UPDATE banner_homepage SET name_en = '$name_eng', name_id = '$name_ind', desc_en = '$desc_eng', desc_id = '$desc_ind', photo = '$photo', url_link = '$url_link', status = '$status' WHERE id_banner_homepage = '$id_banner'");
 		}
@@ -81,6 +81,19 @@ class Model_homepage extends CI_Model{
 		}
 	}
 
+	function insert_services_homepage($id_services, $title_en, $title_id, $desc_en, $desc_id, $icon, $status){
+		$title_eng = $this->db->escape_str($title_en);
+		$title_ind = $this->db->escape_str($title_id);
+		$desc_eng = $this->db->escape_str($desc_en);
+		$desc_ind = $this->db->escape_str($desc_id);
+		$icon = $this->db->escape_str($icon);
+		if($id_services == ""){
+			$this->db->query("INSERT INTO services_homepage(title_en, title_id, desc_en, desc_id, icon, status) VALUES ('$title_eng', '$title_ind', '$desc_eng', '$desc_ind', '$icon', '$status')");
+		}else{
+			$this->db->query("UPDATE services_homepage SET title_en = '$title_eng', title_id = '$title_ind', desc_en = '$desc_eng', desc_id = '$desc_ind', icon = '$icon', status = '$status' WHERE id_services_homepage = '$id_services'");
+		}
+	}	
+
 	public function insert_label_homepage($id_label, $position,$label_en,$label_id){
 	 	if($id_label == ""){
             $this->db->query("insert into label_homepage (position,label_en,label_id) values ('$position','$label_en','$label_id')");
@@ -107,6 +120,10 @@ class Model_homepage extends CI_Model{
 
                 $this->db->query("DELETE FROM seo_homepage WHERE id_seo_homepage = '$id_seo_homepage'");
         }        
+
+	function delete_services_homepage($id_services){
+		$this->db->query("DELETE FROM services_homepage WHERE id_services_homepage = '$id_services'");
+	}
 
 }
 
