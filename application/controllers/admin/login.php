@@ -20,7 +20,7 @@ class Login extends CI_Controller{
 			$username = $this->input->post("username");
 			$password = $this->input->post("password");
 		
-			$get_user = $this->model_user->get_user($username);
+			$get_user = $this->model_user->login($username);
 
 			if($get_user->num_rows() > 0){
 				foreach($get_user->result() as $row){
@@ -31,6 +31,11 @@ class Login extends CI_Controller{
 
 						$this->session->set_userdata('id_user', $row->id_user);
 						$this->session->set_userdata('fullname', $row->fullname);
+						$this->session->set_userdata('username', $row->username);
+						$this->session->set_userdata('password', $row->password);
+						$this->session->set_userdata('email', $row->email);
+						$this->session->set_userdata('description', $row->description);
+						$this->session->set_userdata('photo', $row->photo);
 					}
 					// Jika Salah maka
 					else {

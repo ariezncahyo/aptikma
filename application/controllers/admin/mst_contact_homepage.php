@@ -24,9 +24,9 @@
 				$this->model_homepage->insert_contact_homepage($id_contact, $name_en, $name_id, $value);
 
 				if($id_contact == ""){
-					$status = "Insert Data Successfull";
+					$status = "Insert Data Successful";
 				}else{
-					$status = "Update Data Successfull";
+					$status = "Update Data Successful";
 				}
 
 				$data = array("status"=>$status, "contact_homepage"=>$this->model_homepage->get_contact_homepage()->result());
@@ -48,7 +48,7 @@
 				if($id_contact == ""){
 					$status = "Failed Data Error";
 				}else{
-					$status = "Delete Data Successfull";
+					$status = "Delete Data Successful";
 				}
 				$data = array("status"=>$status, "contact_homepage"=>$this->model_homepage->get_contact_homepage()->result());
 				echo json_encode($data);

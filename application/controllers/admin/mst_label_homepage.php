@@ -25,9 +25,9 @@ class Mst_label_homepage extends CI_Controller {
 
                         $this->model_homepage->insert_label_homepage($id_label, $position,$label_en,$label_id);
                         if($id_label == ""){
-                                $status = "Insert Data Successfull";
+                                $status = "Insert Data Successful";
                         }else{
-                                $status = "Update Data Successfull";
+                                $status = "Update Data Successful";
                         }
                         $data = array('status'=>$status,'label_homepage'=>$this->model_homepage->get_label_homepage()->result());
                         echo json_encode($data);

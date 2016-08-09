@@ -63,7 +63,7 @@
         <!-- End Main Header -->	
 	
         <!-- Page Title -->
-	<section class="content_section white_section page_title has_bg_image bg_header1 enar_parallax">
+	<section class="content_section white_section page_title has_bg_image bg_header3 enar_parallax">
 		<div class="content clearfix">
 			<h1 class=""><?php $label=(array)$label_aboutus->next_row(); echo $label["label_".WEB_LANG]; ?></h1>
 			<div class="breadcrumbs">

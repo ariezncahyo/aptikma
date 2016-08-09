@@ -63,7 +63,17 @@
 	<!-- End Main Header -->
     
 	<!-- Page Title -->
-	<section class="content_section page_title">
+	<section class="content_section white_section page_title has_bg_image bg_header4 enar_parallax">
+		<div class="content clearfix">
+			<h1 class="">Karir</h1>
+			<div class="breadcrumbs">
+				<a href="#">Home</a>
+				<span class="crumbs-spacer"><i class="ico-angle-right"></i></span>
+				<a href="#">Pages</a>
+			</div>
+		</div>
+	</section>	
+	<!--<section class="content_section page_title">
 		<div class="content clearfix">
 			<h1 class=""><?php $label=(array)$label_career->next_row(); echo $label["label_".WEB_LANG]; ?></h1>
 			<div class="breadcrumbs">
@@ -72,7 +82,7 @@
 				<a href="#">Pages</a>
 			</div>
 		</div>
-	</section>
+	</section>!-->
 	<!-- End Page Title -->
 	
 	<!-- Section -->

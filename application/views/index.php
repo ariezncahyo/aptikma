@@ -69,7 +69,7 @@
 			<ul>
 				<li data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-thumb="<?php echo base_url(); ?>assets/images/sliders/homeslider_thum1.jpg" data-delay="13000"  data-saveperformance="off"  data-title="Slide Title">
 					<!-- MAIN IMAGE -->
-					<img src="<?php echo base_url(); ?>assets/images/sliders/rev_bg1.jpg"  alt="kenburns1"  data-bgposition="top right" data-kenburns="on" data-duration="14000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="150" data-bgpositionend="bottom left">
+					<img src="<?php echo base_url(); ?>assets/images/sliders/banner_1_try.jpg"  alt="kenburns1"  data-bgposition="top right" data-kenburns="on" data-duration="14000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="150" data-bgpositionend="bottom left">
 					<!-- LAYERS -->
 					
 					<div class="tp-caption oswald_font ren_num_a sfb fadeout tp-resizeme rs-parallaxlevel-2"
@@ -270,7 +270,7 @@
 		<div class="container icons_spacer icon_boxes_con style1 img_icon_box just_icon_border upper_title centered clearfix">
 			<div class="col-md-4">
 				<div class="service_box">
-					<span class="icon circle"><img src="<?php echo base_url(); ?>assets/images/icons/browser.png" alt="Super Coding"></span>
+					<span class="icon circle"><img src="<?php echo base_url(); ?>assets/images/icons/bulat_web.png" alt="Super Coding"></span>
 					<div class="service_box_con">
 						<h3><?php echo $services["title_".WEB_LANG]; ?></h3>
 						<span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>
@@ -290,7 +290,7 @@
 			</div>
 			<div class="col-md-4">
 				<div class="service_box">
-					<span class="icon circle"><img src="<?php echo base_url(); ?>assets/images/icons/weather.png" alt="Unique Design"></span>
+					<span class="icon circle"><img src="<?php echo base_url(); ?>assets/images/icons/bulat_desktop.png" alt="Unique Design"></span>
 					<div class="service_box_con">
 						<h3><?php $services=(array)$services_homepage->next_row(); echo $services['title_'.WEB_LANG]; ?></h3>
 						<span class="desc"><?php echo $services["desc_".WEB_LANG]; ?></span>

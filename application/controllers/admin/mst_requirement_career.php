@@ -22,9 +22,9 @@
  			$name_id = $this->input->post("name_id");
  			$this->model_career->insert_requirement_career($id_requirement_career, $name_en, $name_id);
  			if($id_requirement_career == ""){
- 				$status = "Insert Data Sucessfull";
+ 				$status = "Insert Data Successful";
  			}else{
- 				$status = "Update Data Successfull";
+ 				$status = "Update Data Successful";
  			}
  		$data = array("status"=>$status, "requirement_career"=>$this->model_career->get_requirements_career()->result());
  		echo json_encode($data);
@@ -46,7 +46,7 @@
  			if($id_requirement_career = ""){
  				$status = "Failed Data Error";
  			}else{
- 				$status = "Delete Data Sucessfull";
+ 				$status = "Delete Data Successful";
  			}
  			$data = array("status"=>$status, "requirement_career"=>$this->model_career->get_requirements_career()->result());
  			echo json_encode($data);

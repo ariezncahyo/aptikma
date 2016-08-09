@@ -22,10 +22,10 @@ class Mst_banner_homepage extends CI_Controller{
 			$name_id = $this->input->post("name_id");
 			$desc_en = $this->input->post("desc_en");
 			$desc_id = $this->input->post("desc_id");
-			$photo = $this->input->post("photo");
+			$image = $this->input->post("image");
 			$url_link = $this->input->post("url_link");
 			$status_homepage = $this->input->post("status");
-			$this->model_homepage->insert_banner_homepage($id_banner, $name_en, $name_id, $desc_en, $desc_id, $photo, $url_link, $status_homepage);
+			$this->model_homepage->insert_banner_homepage($id_banner, $name_en, $name_id, $desc_en, $desc_id, $image, $url_link, $status_homepage);
 
 			if($id_banner == ""){
 				$status = "Insert Data Successful";
@@ -55,7 +55,7 @@ class Mst_banner_homepage extends CI_Controller{
 			if($id_banner == ""){
 				$status = "Failed Data Error";
 			}else{
-				$status = "Delete Data Successfull";
+				$status = "Delete Data Successful";
 			}
 
 			$data = array("status"=>$status, "banner_homepage"=>$this->model_homepage->get_banner_homepage()->result());

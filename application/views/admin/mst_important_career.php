@@ -10,8 +10,8 @@
 						<td>'+important_career[i].name_en+'</td>\n\
 						<td>'+important_career[i].name_id+'</td>\n\
 						<td>\n\
-							<button class="btn btn-xs btn-success" data-toggle="tooltip" title="Ubah" onclick="showEdit('+i+')"><i class="fa fa-edit"></i></button>\n\
-                            <button class="btn btn-xs btn-danger" data-toggle="tooltip" title="Hapus" onclick="showDelete('+i+')"><i class="fa fa-trash"></i></button>\n\
+							<button class="btn btn-xs btn-success" data-toggle="tooltip" title="Change" onclick="showEdit('+i+')"><i class="fa fa-edit"></i></button>\n\
+                            <button class="btn btn-xs btn-danger" data-toggle="tooltip" title="Delete" onclick="showDelete('+i+')"><i class="fa fa-trash"></i></button>\n\
                         </td>\n\
                     </tr>';
             html = html + a;
@@ -22,26 +22,32 @@
 
 </script>
 
+<section class="content-header">
+  <h1>
+    Important Career
+  </h1>
+</section>
+
 <!-- INSERT MODAL --> 
 <div class="modal fade" id="id_modal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Data Important Career</h4>
+                <h4 class="modal-title">Insert/Update Important</h4>
             </div>
             <form id="form_model" class="form-horizontal">
             <div class="modal-body">
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-4 control-label">Nama Important Career (English)</label>
+                        <label for="inputEmail3" class="col-sm-4 control-label">Important Name (English)</label>
                         <div class="col-sm-8">
                             <input type="hidden" class="form-control" id="id_important_career">
                             <input type="text" class="form-control" id="name_en" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-4 control-label">Nama Important Career (Indonesia) </label>
+                        <label for="inputEmail3" class="col-sm-4 control-label">Important Name (Indonesia) </label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="name_id" required>
                         </div>
@@ -52,7 +58,7 @@
                 <img id="load_form_modal" style="display: none;" src="<?php echo base_url().'assets/admin/img/loading.gif'; ?>">
                 <span id="notif_form_modal" style="display: none;"></span>
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-primary">Simpan</button>
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
             </form>
         </div><!-- /.modal-content -->
@@ -65,14 +71,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Data Important Career </h4>
+                <h4 class="modal-title">Delete Important</h4>
             </div>
             <form id="form_model_del" class="form-horizontal">
             <div class="modal-body">
                 <div class="box-body">
                     <center>
                         <input type="hidden" id="hapus_id_important_career">
-                        <p style="font-size: 15px;">Yakin Menghapus <span id="hapus_nama_important_career" style="font-weight: bold;"></span> ?</p>
+                        <p style="font-size: 15px;">DO you really want to delete <span id="hapus_nama_important_career" style="font-weight: bold;"></span> ?</p>
                     </center>
                 </div>
             </div>
@@ -80,7 +86,7 @@
                 <img id="load_form_modal_del" style="display: none;" src="<?php echo base_url().'assets/admin/img/loading.gif'; ?>">
                 <span id="notif_form_modal_del" style="display: none;"></span>
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-primary">Hapus</button>
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
             </form>
         </div><!-- /.modal-content -->
@@ -94,7 +100,7 @@
       <div class="box">
         <div class="box-header">
             <h3 class="box-title">Data Important Career</h3>
-            <button class="btn btn-xs btn-primary pull-right" data-toggle="tooltip" title="Tambah Important Career" style="margin-right: 5px;"  onclick="showAdd()"><i class="fa fa-plus"></i></button>
+            <button class="btn btn-xs btn-primary pull-right" data-toggle="tooltip" title="Add New" style="margin-right: 5px;"  onclick="showAdd()"><i class="fa fa-plus"></i></button>
         </div><!-- /.box-header -->
         <div class="box-body">
 
@@ -102,9 +108,9 @@
             <thead>
               <tr>
                 <th>No</th>
-                <th>Nama English</th>
-                <th>Nama Indonesia</th>
-                <th>Opsi</th>
+                <th>Name (English)</th>
+                <th>Name (Indonesia)</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody id="isi_tabel">

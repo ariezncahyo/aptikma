@@ -3,15 +3,13 @@
 	var json_portfolio = <?php echo json_encode($portfolio) ?>;
 	var json_category_portfolio = <?php echo json_encode($category_portfolio) ?>;
 
-	function load_portfolio(portfolio){
+	function load_portfolio(portfolio, category){
 		var html ="";
-        var category = "";
-
 
 		for(var i = 0; i< portfolio.length; i++){
             for(var j = 0 ; j < category.length ; j++){
                 if(category[j].id_category_portfolio == portfolio[i].category){
-                    category = category[j].name_en;
+                    var categori = category[j].name_en;
                 }
             }
 
@@ -22,10 +20,10 @@
 						<td>'+portfolio[i].desc_en+'</td>\n\
 						<td>'+portfolio[i].desc_id+'</td>\n\
 						<td>'+portfolio[i].url_link+'</td>\n\
-						<td>'+category+'</td>\n\
+						<td>'+categori+'</td>\n\
 						<td>\n\
-                            <button class="btn btn-xs btn-success" data-toggle="tooltip" title="Ubah" onclick="showEdit('+i+')"><i class="fa fa-edit"></i></button>\n\
-                            <button class="btn btn-xs btn-danger" data-toggle="tooltip" title="Hapus" onclick="showDelete('+i+')"><i class="fa fa-trash"></i></button>\n\
+                            <button class="btn btn-xs btn-success" data-toggle="tooltip" title="Change" onclick="showEdit('+i+')"><i class="fa fa-edit"></i></button>\n\
+                            <button class="btn btn-xs btn-danger" data-toggle="tooltip" title="Delete" onclick="showDelete('+i+')"><i class="fa fa-trash"></i></button>\n\
                         </td>\n\
                     </tr>';
 			html = html + a;
@@ -50,13 +48,8 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Master
-    <small>Kamar</small>
+    Portfolio Portfolio
   </h1>
-  <ol class="breadcrumb">
-    <li>Master</li>
-    <li>Portfolio</li>
-  </ol>
 </section>
 
 <!-- MODAL INSERT PORTFOLIO -->
@@ -65,43 +58,43 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Data Portfolio</h4>
+                <h4 class="modal-title">Insert/Update Portfolio</h4>
             </div>
             <form id="form_model" class="form-horizontal">
             <div class="modal-body">
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-4 control-label">Judul Portfolio (EN)</label>
+                        <label for="inputEmail3" class="col-sm-4 control-label">Portfolio Title (English)</label>
                         <div class="col-sm-8">
                             <input type="hidden" class="form-control" id="id_portfolio">
                             <input type="text" class="form-control" id="title_en" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-4 control-label">Judul Portfolio (ID)</label>
+                        <label for="inputEmail3" class="col-sm-4 control-label">Portfolio Title (Indonesia)</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="title_id" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-4 control-label">Deskripsi Portfolio (EN)</label>
+                        <label for="inputEmail3" class="col-sm-4 control-label">Description (English)</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="desc_en" required>
                         </div>
                     </div><div class="form-group">
-                        <label for="inputEmail3" class="col-sm-4 control-label">Deskripsi Portfolio (ID)</label>
+                        <label for="inputEmail3" class="col-sm-4 control-label">Desscription (Indonesia)</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="desc_id" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-4 control-label">URL LINK Portfolio</label>
+                        <label for="inputEmail3" class="col-sm-4 control-label">URL</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="url_links" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-4 control-label">Kategory</label>
+                        <label for="inputEmail3" class="col-sm-4 control-label">Category</label>
                         <div class="col-sm-8">
                             <select class="form-control" id="category" required>
                                 
@@ -114,7 +107,7 @@
                 <img id="load_form_modal" style="display: none;" src="<?php echo base_url().'assets/images/assets/loader.gif'; ?>">
                 <span id="notif_form_modal" style="display: none;"></span>
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-primary">Simpan</button>
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
             </form>
         </div><!-- /.modal-content -->
@@ -128,14 +121,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Data Kategori</h4>
+                <h4 class="modal-title">Delete Portfolio</h4>
             </div>
             <form id="form_model_del" class="form-horizontal">
             <div class="modal-body">
                 <div class="box-body">
                     <center>
                         <input type="hidden" id="hapus_portfolio">
-                        <p style="font-size: 15px;">Yakin Menghapus <span id="hapus_portfolio_p" style="font-weight: bold;"></span> ?</p>
+                        <p style="font-size: 15px;">Do you really want to delete <span id="hapus_portfolio_p" style="font-weight: bold;"></span> ?</p>
                     </center>
                 </div>
             </div>
@@ -143,7 +136,7 @@
                 <img id="load_form_modal_del" style="display: none;" src="<?php echo base_url().'assets/admin/img/loading.gif'; ?>">
                 <span id="notif_form_modal_del" style="display: none;"></span>
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-primary">Hapus</button>
+                <button type="submit" class="btn btn-primary">Delete</button>
             </div>
             </form>
         </div><!-- /.modal-content -->
@@ -155,8 +148,8 @@
 		<div class="col-xs-12">
 			<div class="box">
 				<div class="box-header">
-					<h3 class="box-title">Data portfolio</h3> 
-					<button class="btn btn-xs btn-primary pull-right" data-toggle="tooltip" title="Tambah Portfolio" style="margin-right: 5px;"  onclick="showAdd()"><i class="fa fa-plus"></i></button>
+					<h3 class="box-title">Data Portfolio Portfolio</h3> 
+					<button class="btn btn-xs btn-primary pull-right" data-toggle="tooltip" title="Add New" style="margin-right: 5px;"  onclick="showAdd()"><i class="fa fa-plus"></i></button>
 				</div>
 				<div class="box-body">
 
@@ -164,13 +157,13 @@
 						<thead>
 							<tr>
 								<th>No</th>
-								<th>Title English</th>
-								<th>Title Indonesia</th>
-								<th>Deskripsi English</th>
-								<th>Deskripsi Indonesia</th>
-								<th>URL Link</th>
+								<th>Title (English)</th>
+								<th>Title (Indonesia)</th>
+								<th>Description (English)</th>
+								<th>Description (Indonesia)</th>
+								<th>URL</th>
 								<th>Category</th>
-                                <th>Opsi</th>
+                                <th>Action</th>
 							</tr>
 						</thead>
 						<tbody id="isi_tabel">
@@ -184,7 +177,7 @@
 </section><!-- /.content -->
 
   <script>
-	load_portfolio(json_portfolio);
+	load_portfolio(json_portfolio, json_category_portfolio);
 	load_category(json_category_portfolio);
 
 	// FUNSI TAMBAH DATA

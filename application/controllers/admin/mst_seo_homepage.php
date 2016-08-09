@@ -51,7 +51,7 @@
 				if($id_seo == ""){
 					$status = "Failed Data Error";
 				}else{
-					$status = "Delete Data Successfull";
+					$status = "Delete Data Successful";
 				}
 				$data = array("status"=>$status, "seo_homepage"=>$this->model_homepage->get_seo_homepage()->result());
 				echo json_encode($data);

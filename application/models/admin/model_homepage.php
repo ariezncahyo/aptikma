@@ -7,6 +7,11 @@ class Model_homepage extends CI_Model{
 		$this->load->database();
 	}
 
+	function get_menu_homepage(){
+		$query = $this->db->query("SELECT * FROM menu_homepage");
+		return $query;
+	}
+
 	function get_banner_homepage(){
 		$query = $this->db->query("SELECT * FROM banner_homepage");
 		return $query;
@@ -38,21 +43,36 @@ class Model_homepage extends CI_Model{
 	}
 
 	function get_whychoose_homepage(){
-		$query - $this->db->query("SELECT * FROM whychoose_homepage");
+		$query = $this->db->query("SELECT * FROM whychoose_homepage");
 		return $query;
 	}
 
 	// INSERT FUNCTION QUERY
-	function insert_banner_homepage($id_banner, $name_en, $name_id, $desc_en, $desc_id, $photo, $url_link, $status){
+	function insert_menu_homepage($id_menu, $title, $name_en, $name_id, $controller, $url_link_en, $url_link_id){
+		$titles = $this->db->escape_str($title);
+		$name_eng = $this->db->escape_str($name_en);
+		$name_ind = $this->db->escape_str($name_id);
+		$controllers = $this->db->escape_str($controller);
+		$url_link_eng = $this->db->escape_str($url_link_en);
+		$url_link_ind = $this->db->escape_str($url_link_id);
+		if($id_menu == ""){
+			$this->db->query("INSERT INTO menu_homepage(title, name_en, name_id, controller, url_link_en, url_link_id) VALUES ('$titles', '$name_eng', '$name_ind', '$controllers', '$url_link_eng', '$url_link_ind')");
+		}else{
+			$this->db->query("UPDATE menu_homepage SET title = '$titles', name_en = '$name_eng', name_id = '$name_ind', controller = '$controllers', url_link_en = '$url_link_eng', url_link_id = '$url_link_ind' WHERE id_menu_homepage = '$id_menu'");
+		}
+	}	
+
+
+	function insert_banner_homepage($id_banner, $name_en, $name_id, $desc_en, $desc_id, $image, $url_link, $status){
 		$name_eng = $this->db->escape_str($name_en);
 		$name_ind = $this->db->escape_str($name_id);
 		$desc_eng = $this->db->escape_str($desc_en);
 		$desc_ind = $this->db->escape_str($desc_id);
 		$url_links = $this->db->escape_str($url_link);
 		if($id_banner == ""){
-			$this->db->query("INSERT INTO banner_homepage(name_en, name_id, desc_en, desc_id, photo, urL_link, status) VALUES ('$name_eng', '$name_ind', '$desc_eng', '$desc_ind', '$photo', '$url_links','$status')");
+			$this->db->query("INSERT INTO banner_homepage(name_en, name_id, desc_en, desc_id, image, urL_link, status) VALUES ('$name_eng', '$name_ind', '$desc_eng', '$desc_ind', '$image', '$url_links','$status')");
 		}else{
-			$this->db->query("UPDATE banner_homepage SET name_en = '$name_eng', name_id = '$name_ind', desc_en = '$desc_eng', desc_id = '$desc_ind', photo = '$photo', url_link = '$url_link', status = '$status' WHERE id_banner_homepage = '$id_banner'");
+			$this->db->query("UPDATE banner_homepage SET name_en = '$name_eng', name_id = '$name_ind', desc_en = '$desc_eng', desc_id = '$desc_ind', image = '$image', url_link = '$url_link', status = '$status' WHERE id_banner_homepage = '$id_banner'");
 		}
 	}
 
@@ -102,7 +122,35 @@ class Model_homepage extends CI_Model{
         }
     }
 
+	function insert_vission_homepage($id_vission, $desc_en, $desc_id, $image){
+		$desc_eng = $this->db->escape_str($desc_en);
+		$desc_ind = $this->db->escape_str($desc_id);
+		$images = $this->db->escape_str($image);
+		if($id_vission == ""){
+			$this->db->query("INSERT INTO vission_homepage(desc_en, desc_id, image) VALUES ('$desc_eng', '$desc_ind', '$images')");
+		}else{
+			$this->db->query("UPDATE vission_homepage SET desc_en = '$desc_eng', desc_id = '$desc_ind', image = '$images', status = '$status' WHERE id_vission_homepage = '$id_vission'");
+		}
+	}	
+
+	function insert_whychoose_homepage($id_whychoose, $title_en, $title_id, $desc_en, $desc_id, $image){
+		$title_eng = $this->db->escape_str($title_en);
+		$title_ind = $this->db->escape_str($title_id);
+		$desc_eng = $this->db->escape_str($desc_en);
+		$desc_ind = $this->db->escape_str($desc_id);
+		$images = $this->db->escape_str($image);
+		if($id_whychoose == ""){
+			$this->db->query("INSERT INTO whychoose_homepage(title_en, title_id, desc_en, desc_id, image) VALUES ('$title_eng', '$title_ind', '$desc_eng', '$desc_ind', '$images')");
+		}else{
+			$this->db->query("UPDATE whychoose_homepage SET title_en = '$title_eng', title_id = '$title_ind', desc_en = '$desc_eng', desc_id = '$desc_ind', image = '$images' WHERE id_whychoose_homepage = '$id_whychoose'");
+		}
+	}	
+
 	// DELETE FUNCTION
+	function delete_menu_homepage($id_menu){
+		$this->db->query("DELETE FROM menu_homepage WHERE id_menu_homepage = '$id_menu'");
+	}
+
 	function delete_banner_homepage($id_banner){
 		$this->db->query("DELETE FROM banner_homepage WHERE id_banner_homepage = '$id_banner'");
 	}
@@ -123,6 +171,14 @@ class Model_homepage extends CI_Model{
 
 	function delete_services_homepage($id_services){
 		$this->db->query("DELETE FROM services_homepage WHERE id_services_homepage = '$id_services'");
+	}
+
+	function delete_vission_homepage($id_vission){
+		$this->db->query("DELETE FROM vission_homepage WHERE id_vission_homepage = '$id_vission'");
+	}
+
+	function delete_whychoose_homepage($id_whychoose){
+		$this->db->query("DELETE FROM whychoose_homepage WHERE id_whychoose_homepage = '$id_whychoose'");
 	}
 
 }

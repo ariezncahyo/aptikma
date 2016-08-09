@@ -59,6 +59,20 @@
 		<?php $this->load->view('menu');  ?>
 	        <!-- End Main Header -->	    
     
+	<!-- Page Title -->
+	<section class="content_section white_section page_title has_bg_image bg_header4 enar_parallax">
+		<div class="content clearfix">
+			<h1 class="">Portofolio</h1>
+			<div class="breadcrumbs">
+				<a href="#">Home</a>
+				<span class="crumbs-spacer"><i class="ico-angle-right"></i></span>
+				<a href="#">Pages</a>
+			</div>
+		</div>
+	</section>
+	<!-- End Page Title -->
+
+
 	<!-- Isotope Filter 1 Three columns with padding -->
 	<section class="content_section bg_gray border_t_n border_t_n">
 	    <div class="row_spacer clearfix">

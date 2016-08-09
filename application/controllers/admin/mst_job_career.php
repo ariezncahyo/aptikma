@@ -25,9 +25,9 @@ class Mst_job_career extends CI_Controller{
 			$this->model_career->insert_job_career($id_job, $name_en, $name_id, $desc_en, $desc_id);
 
 			if($id_job == ""){
-				$status = "Insert Data Sucessfull";
+				$status = "Insert Data Successful";
 			}else{
-				$status = "Update Data Sucessfull";
+				$status = "Update Data Successful";
 			}
 
 			$data = array("status"=>$status, "job_career"=>$this->model_career->get_job_career()->result());
@@ -50,7 +50,7 @@ class Mst_job_career extends CI_Controller{
 			if($id_job == ""){
 				$status = "Failed Data Error";
 			}else{
-				$status = "Delete Data Sucessfull";
+				$status = "Delete Data Successful";
 			}
 
 			$data = array("status"=>$status, "job_career"=>$this->model_career->get_job_career()->result());
